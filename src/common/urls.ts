@@ -1,6 +1,6 @@
 export const CA = "Coming";
-export const TELEGRAM = "http://t.me/babon";
-export const TWITTER = "https://twitter.com/babon";
+export const TELEGRAM = "http://t.me/wafsolana";
+export const TWITTER = "https://x.com/catwafhatt";
 
 export const BUY_LINK =
     "";
