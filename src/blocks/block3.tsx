@@ -1,21 +1,21 @@
 import { BlockWrapper } from "../common/block-wrapper";
-import img from "../assets/block3/image.png";
+import img from "../assets/waf.webp";
 import { useCallback } from "react";
-import { BUY_LINK } from "../common/urls";
-const pClass = "text-4xl";
+import { TELEGRAM } from "../common/urls";
+const pClass = "text-4xl uppercase font-bold";
 
 export const hoverScale = "hover:scale-[1.01] transform transition duration-y";
 
 export const Block3 = () => {
   const onPress = useCallback(() => {
-    window.open(BUY_LINK, "_blank");
+    window.open(TELEGRAM, "_blank");
   }, []);
 
   return (
     <>
       <BlockWrapper>
         <div className="flex w-full lg:flex-row flex-col-reverse gap-16">
-          <div className="lg:w-1/2 w-full flex flex-col justify-evenly gap-16 items-center">
+          <div className="lg:w-1/2 w-full flex flex-col justify-evenly gap-16 md:gap-8 items-center">
             <p className={pClass}>1) Lorem impus impus impus</p>
             <p className={pClass}>2) Lorem impus impus impus</p>
             <p className={pClass}>3) Lorem impus impus impus</p>
@@ -32,7 +32,7 @@ export const Block3 = () => {
               onClick={onPress}
               className="cursor-pointer text-red border-none text-center justify-center align-middle flex items-center relative py-4 px-2 w-full lg:w-10/12 overflow-hidden border bg-[#B61F1F] rounded-2xl text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-red-500 before:transition-all before:duration-500 hover:text-white hover:shadow-red-500 hover:before:left-0 hover:before:w-full"
             >
-              <p className="z-10 bg-transparent">Press button</p>
+              <p className="z-10 bg-transparent font-bold">TELEGRAM</p>
             </a>
           </div>
         </div>
