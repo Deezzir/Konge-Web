@@ -46,6 +46,9 @@ export const Block1 = () => {
     return (
       <>
         <Links customClass="" />
+        <p className="font-bold text-2xl select-all">
+          CA: Xuvcxkh2Ttpx9mRUJWe9eGCcjdzFHR1KYx2Y8CRP8VC
+        </p>
         <div className="w-full flex flex-col md:flex-row gap-2 md:gap-16 items-center justify-between text-4xl md:text-6xl font-bold text-center">
           <div className="relative w-[25%] h-[60vh] text-3xl font-bold hidden md:block">
             {texts
