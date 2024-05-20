@@ -38,7 +38,7 @@ export const Block1 = () => {
     const timerId = setTimeout(() => {
       setFlipped(!flipped);
       addTextElement(!flipped ? "left" : "right");
-    }, 3000);
+    }, Math.random() * (3000 - 1000) + 1000);
     return () => clearTimeout(timerId);
   }, [flipped, texts, isMobile]);
 
@@ -100,7 +100,7 @@ export const Block1 = () => {
         </div>
       </>
     );
-  }, [texts]);
+  }, [flipped, texts]);
 
   return (
     <>

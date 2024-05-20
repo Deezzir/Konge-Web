@@ -39,7 +39,7 @@ export const Block3 = () => {
         </div>
       </>
     );
-  }, []);
+  }, [onPress]);
 
   return (
     <>
