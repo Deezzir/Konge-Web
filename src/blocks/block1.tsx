@@ -92,9 +92,9 @@ export const Block1 = () => {
         </div>
         <div>
           <h2 className="text-xl md:text-3xl font-bold text-center">
-            Have a chance to overtake the idea of wif. Its not just another
-            boring remake of wif, it could be a competitor of it. $WAF is a cute
-            cat with unlimited meme potential in its concept
+            Have a chance to overtake the idea of WIF. Its not just another
+            boring remake of WIF, it could be a competitor of it. $WAF is a cute
+            cat with unlimited meme potential in its concept.
           </h2>
         </div>
       </>
