@@ -4,7 +4,7 @@ import { Block3 } from "./blocks/block3";
 
 function App() {
   return (
-    <div className="flex flex-col gap-16 items-center">
+    <div className="flex flex-col gap-16 items-center pb-16">
       <Block1 />
       <Block2 />
       <Block3 />
