@@ -16,13 +16,13 @@ export const Block3 = () => {
     return (
       <>
         <div className="flex w-full lg:flex-row flex-col-reverse gap-16">
-          <div className="lg:w-1/2 w-full flex flex-col justify-center gap-16 items-center lg:items-start">
+          <div className="lg:w-[55%] w-full flex flex-col justify-center gap-16 items-center lg:items-start">
             <p className={pClass}>1) launching at pump fun</p>
             <p className={pClass}>2) burning 13%, prepaying dex</p>
             <p className={pClass}>3) creating all socials </p>
             <p className={pClass}>4) pumping together as a community</p>
           </div>
-          <div className="lg:w-1/2 w-full flex-col flex justify-end items-end gap-8">
+          <div className="lg:w-[45%] w-full flex-col flex justify-end items-end gap-8">
             <Img
               className={
                 "w-full lg:w-10/12 rounded-lg drop-shadow-xl " + hoverScale
