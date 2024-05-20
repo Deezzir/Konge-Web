@@ -1,7 +1,9 @@
 import { BlockWrapper } from "../common/block-wrapper";
 import img1 from "../assets/block2/image.png";
+import { hoverScale } from "./block3";
 
-const imgClass = "object-contain lg:h-auto rounded-xl";
+const imgClass =
+  "object-contain lg:h-auto rounded-xl drop-shadow-xl " + hoverScale;
 
 export const Block2 = () => {
   return (
