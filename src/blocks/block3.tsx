@@ -2,8 +2,8 @@ import { BlockWrapper } from "../common/block-wrapper";
 import img from "../assets/waf.webp";
 import { useCallback } from "react";
 import { TELEGRAM } from "../common/urls";
-const pClass = "text-4xl uppercase font-bold";
 
+const pClass = "text-4xl uppercase font-bold md:text-left text-center";
 export const hoverScale = "hover:scale-[1.01] transform transition duration-y";
 
 export const Block3 = () => {
