@@ -14,27 +14,18 @@ export const Block2 = () => {
   return (
     <>
       <BlockWrapper>
-        <div className="flex lg:flex-row flex-col gap-8 lg:gap-16 justify-center items-center w-full">
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img1} />
-          </div>
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img2} />
-          </div>
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img3} />
-          </div>
-        </div>
-        <div className="flex lg:flex-row flex-col gap-8 lg:gap-16 justify-center items-center w-full">
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img4} />
-          </div>
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img5} />
-          </div>
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <img className={imgClass} src={img6} />
-          </div>
+        <div className="grid lg:flex-row grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-16 justify-center items-center w-full">
+          <img className={imgClass} src={img1} />
+
+          <img className={imgClass} src={img2} />
+
+          <img className={imgClass} src={img3} />
+
+          <img className={imgClass} src={img4} />
+
+          <img className={imgClass} src={img5} />
+
+          <img className={imgClass} src={img6} />
         </div>
       </BlockWrapper>
     </>
