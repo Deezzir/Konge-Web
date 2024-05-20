@@ -5,11 +5,11 @@ import { Block3 } from "./blocks/block3";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col gap-16 items-center">
       <Block1 />
       <Block2 />
       <Block3 />
-    </>
+    </div>
   );
 }
 
