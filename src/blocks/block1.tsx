@@ -16,7 +16,7 @@ export const Block1 = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 1024);
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
   useEffect(() => {
@@ -45,8 +45,8 @@ export const Block1 = () => {
     <>
       <BlockWrapper>
         <Links customClass="" />
-        <div className="w-full flex flex-col xl:flex-row gap-2 xl:gap-16 items-center justify-between text-4xl md:text-6xl font-bold text-center">
-          <div className="relative w-[25%] h-[60vh] text-3xl font-bold">
+        <div className="w-full flex flex-col md:flex-row gap-2 md:gap-16 items-center justify-between text-4xl md:text-6xl font-bold text-center">
+          <div className="relative w-[25%] h-[60vh] text-3xl font-bold hidden md:block">
             {texts
               .filter((text) => text.side === "left")
               .map((text) => (
@@ -62,17 +62,17 @@ export const Block1 = () => {
                 </div>
               ))}
           </div>
-          <div className="relative w-[50%] flex justify-center items-center">
+          <div className="relative w-full md:w-[50%] flex justify-center items-center">
             <img
               src={WAF}
               alt="logo"
               className={
-                "w-full h-auto xl:w-auto xl:h-[60vh] rounded-2xl transition duration-300 " +
+                "h-full aspect-auto max-h-[60vh] rounded-2xl transition duration-300 " +
                 (flipped ? "img-hor" : "")
               }
             />
           </div>
-          <div className="relative w-[25%] h-[60vh] text-3xl font-bold">
+          <div className="relative w-[25%] h-[60vh] text-3xl font-bold hidden md:block">
             {texts
               .filter((text) => text.side === "right")
               .map((text) => (
@@ -90,7 +90,7 @@ export const Block1 = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-xl xl:text-3xl font-bold text-center">
+          <h2 className="text-xl md:text-3xl font-bold text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
             accusamus illo ab quia aspernatur, reiciendis nulla possimus odit
             porro incidunt quisquam soluta voluptas. Obcaecati veniam nisi
