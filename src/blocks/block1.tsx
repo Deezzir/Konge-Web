@@ -1,7 +1,8 @@
 import { BlockWrapper } from "../common/block-wrapper";
 import { Links } from "../common/links";
 import WAF from "../assets/waf.webp";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Img } from "react-image";
 
 interface TextElement {
   id: number;
@@ -41,9 +42,9 @@ export const Block1 = () => {
     return () => clearTimeout(timerId);
   }, [flipped, texts, isMobile]);
 
-  return (
-    <>
-      <BlockWrapper>
+  const getBlock = useCallback(() => {
+    return (
+      <>
         <Links customClass="" />
         <div className="w-full flex flex-col md:flex-row gap-2 md:gap-16 items-center justify-between text-4xl md:text-6xl font-bold text-center">
           <div className="relative w-[25%] h-[60vh] text-3xl font-bold hidden md:block">
@@ -63,7 +64,7 @@ export const Block1 = () => {
               ))}
           </div>
           <div className="relative w-full md:w-[50%] flex justify-center items-center">
-            <img
+            <Img
               src={WAF}
               alt="logo"
               className={
@@ -97,7 +98,13 @@ export const Block1 = () => {
             accusantium earum ad sapiente.
           </h2>
         </div>
-      </BlockWrapper>
+      </>
+    );
+  }, [texts]);
+
+  return (
+    <>
+      <BlockWrapper>{getBlock()}</BlockWrapper>
     </>
   );
 };
