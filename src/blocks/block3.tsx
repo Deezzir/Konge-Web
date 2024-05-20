@@ -16,11 +16,11 @@ export const Block3 = () => {
     return (
       <>
         <div className="flex w-full lg:flex-row flex-col-reverse gap-16">
-          <div className="lg:w-1/2 w-full flex flex-col justify-evenly gap-16 md:gap-8 items-center">
-            <p className={pClass}>1) Lorem impus impus impus</p>
-            <p className={pClass}>2) Lorem impus impus impus</p>
-            <p className={pClass}>3) Lorem impus impus impus</p>
-            <p className={pClass}>4) Lorem impus impus impus</p>
+          <div className="lg:w-1/2 w-full flex flex-col justify-center gap-16 items-center lg:items-start">
+            <p className={pClass}>1) launching at pump fun</p>
+            <p className={pClass}>2) burning 13%, prepaying dex</p>
+            <p className={pClass}>3) creating all socials </p>
+            <p className={pClass}>4) pumping together as a community</p>
           </div>
           <div className="lg:w-1/2 w-full flex-col flex justify-end items-end gap-8">
             <Img

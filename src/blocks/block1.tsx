@@ -38,7 +38,7 @@ export const Block1 = () => {
     const timerId = setTimeout(() => {
       setFlipped(!flipped);
       addTextElement(!flipped ? "left" : "right");
-    }, Math.random() * (3000 - 1000) + 1000);
+    }, Math.random() * (2000 - 1000) + 1000);
     return () => clearTimeout(timerId);
   }, [flipped, texts, isMobile]);
 
@@ -68,7 +68,7 @@ export const Block1 = () => {
               src={WAF}
               alt="logo"
               className={
-                "h-full aspect-auto max-h-[60vh] rounded-2xl transition duration-300 " +
+                "h-full aspect-auto max-h-[60vh] transition duration-300 " +
                 (flipped ? "img-hor" : "")
               }
             />
@@ -92,10 +92,9 @@ export const Block1 = () => {
         </div>
         <div>
           <h2 className="text-xl md:text-3xl font-bold text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            accusamus illo ab quia aspernatur, reiciendis nulla possimus odit
-            porro incidunt quisquam soluta voluptas. Obcaecati veniam nisi
-            accusantium earum ad sapiente.
+            Have a chance to overtake the idea of wif. Its not just another
+            boring remake of wif, it could be a competitor of it. $WAF is a cute
+            cat with unlimited meme potential in its concept
           </h2>
         </div>
       </>
