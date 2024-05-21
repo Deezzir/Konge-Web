@@ -32,7 +32,7 @@ export const Block1 = () => {
                 HODL and get to the millions.
               </p>
               <p className="bg-white border-2 border-black text-black  rounded-2xl p-2 w-full  md:w-1/2">
-                JEET and cry later about it.
+                JEET and watch to the millions.
               </p>
             </div>
           </div>
