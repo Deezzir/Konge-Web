@@ -18,7 +18,7 @@ export const Block2 = () => {
                     "w-auto h-auto rounded-2xl select-none object-contain " +
                     hoverScale
                   }
-                  src={"/src/assets/block2/sqr0.webp"}
+                  src={"../assets/block2/sqr0.webp"}
                   key={index}
                 />
               );
@@ -34,7 +34,7 @@ export const Block2 = () => {
                     "w-auto h-auto rounded-2xl select-none object-contain " +
                     hoverScale
                   }
-                  src={"/src/assets/block2/sqr0.webp"}
+                  src={"../assets/block2/sqr0.webp"}
                   key={index}
                 />
               );
@@ -50,7 +50,7 @@ export const Block2 = () => {
                     "w-auto h-auto rounded-2xl select-none object-contain " +
                     hoverScale
                   }
-                  src={"/src/assets/block2/sqr0.webp"}
+                  src={"../assets/block2/sqr0.webp"}
                   key={index}
                 />
               );
@@ -71,7 +71,7 @@ export const Block2 = () => {
                     "w-auto h-auto rounded-2xl select-none object-contain " +
                     hoverScale
                   }
-                  src={"/src/assets/block2/sqr0.webp"}
+                  src={"../assets/block2/sqr0.webp"}
                   key={index}
                 />
               );
