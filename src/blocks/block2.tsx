@@ -1,49 +1,86 @@
-import { BlockWrapper } from "../common/block-wrapper";
-import img1 from "../assets/block2/sqr0.webp";
-import img2 from "../assets/block2/sqr1.webp";
-import img3 from "../assets/block2/sqr2.webp";
-import img4 from "../assets/block2/sqr3.webp";
-import img5 from "../assets/block2/sqr4.webp";
-import img6 from "../assets/block2/sqr5.webp";
-import img7 from "../assets/block2/sqr6.webp";
-import img8 from "../assets/block2/sqr7.webp";
-import { hoverScale } from "./block3";
-import { Img } from "react-image";
-import { useCallback } from "react";
+import { motion } from "framer-motion";
 
-const imgClass =
-  "object-contain lg:h-auto rounded-xl drop-shadow-xl " + hoverScale;
+import Marquee from "react-fast-marquee";
+import { Img } from "react-image";
+
+export const hoverScale = "hover:scale-[1.01] transform transition duration-y";
 
 export const Block2 = () => {
-  const getImages = useCallback(() => {
+  const getImages = () => {
     return (
       <>
-        <Img className={imgClass} src={img1} loading="eager" />
-
-        <Img className={imgClass} src={img2} loading="eager" />
-
-        <Img className={imgClass} src={img3} loading="eager" />
-
-        <Img className={imgClass} src={img4} loading="eager" />
-
-        <Img className={imgClass} src={img5} loading="eager" />
-
-        <Img className={imgClass} src={img6} loading="eager" />
-
-        <Img className={imgClass} src={img7} loading="eager" />
-
-        <Img className={imgClass} src={img8} loading="eager" />
+        <Marquee speed={15} autoFill direction={"left"}>
+          <div className="flex flex-row gap-8 h-[25vh] ms-8">
+            {[...Array(7)].map((_, index: any) => {
+              return (
+                <Img
+                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  src={"/src/assets/block2/sqr0.webp"}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </Marquee>
+        <Marquee speed={25} autoFill direction={"right"}>
+          <div className="flex flex-row gap-8 h-[25vh] ms-8">
+            {[...Array(7)].map((_, index: any) => {
+              return (
+                <Img
+                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  src={"/src/assets/block2/sqr0.webp"}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </Marquee>
+        <Marquee speed={20} autoFill direction={"left"}>
+          <div className="flex flex-row gap-8 h-[25vh] ms-8">
+            {[...Array(7)].map((_, index: any) => {
+              return (
+                <Img
+                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  src={"/src/assets/block2/sqr0.webp"}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </Marquee>
+        <Marquee
+          className="flex w-full"
+          speed={17}
+          autoFill
+          direction={"right"}
+        >
+          <div className="flex flex-row gap-8 h-[25vh] ms-8">
+            {[...Array(7)].map((_, index: any) => {
+              return (
+                <Img
+                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  src={"/src/assets/block2/sqr0.webp"}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </Marquee>
       </>
     );
-  }, []);
+  };
 
   return (
-    <>
-      <BlockWrapper>
-        <div className="grid lg:flex-row grid-cols-1 xl:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-16 justify-center items-center w-full">
-          {getImages()}
-        </div>
-      </BlockWrapper>
-    </>
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{
+        duration: 2,
+      }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="flex flex-col gap-8 min-h-screen w-full"
+    >
+      {getImages()}
+    </motion.div>
   );
 };
