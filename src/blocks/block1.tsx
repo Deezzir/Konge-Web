@@ -8,12 +8,12 @@ export const Block1 = () => {
   const getBlock = useCallback(() => {
     return (
       <>
+        <h1 className="font-bold text-2xl select-all">
+          Willem DaChoice : $WILLEM
+        </h1>
         <Links customClass="" />
         <h1 className="font-bold text-2xl">
           CA: <span className="select-all">Coming</span>
-        </h1>
-        <h1 className="font-bold text-2xl select-all">
-          Willem DaChoice : $WILLEM
         </h1>
         <div className="w-full flex flex-col md:flex-row gap-2 md:gap-16 items-center justify-between text-4xl md:text-6xl font-bold text-center">
           <div className="relative w-full md:w-1/2 flex justify-center items-center">
