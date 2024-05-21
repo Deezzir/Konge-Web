@@ -1,13 +1,5 @@
-import {
-  DEXSCREENER,
-  DEXTOOLS,
-  JUPITER,
-  RAYDIUM,
-  TELEGRAM,
-  TWITTER,
-} from "./urls";
+import { DEXSCREENER, JUPITER, RAYDIUM, TELEGRAM, TWITTER } from "./urls";
 import { DexscreenerIcon } from "./icons/dexscreener-icon";
-import { DextoolsIcon } from "./icons/dextools-icon";
 import { JupiterIcon } from "./icons/jupiter-icon";
 import { RaydiumIcon } from "./icons/raydium-icon";
 import { TgIcon } from "./icons/tg-icon";
@@ -55,6 +47,16 @@ export const Links = (props: { customClass: string }) => {
           <TgIcon iconClass={iconClass} />
         </a>
       </Checker>
+      <Checker val={DEXSCREENER}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={DEXSCREENER}
+          className={buttonClass}
+        >
+          <DexscreenerIcon iconClass={iconClass} />
+        </a>
+      </Checker>
       <Checker val={RAYDIUM}>
         <a
           target="_blank"
@@ -73,26 +75,6 @@ export const Links = (props: { customClass: string }) => {
           className={buttonClass}
         >
           <JupiterIcon iconClass={iconClass} />
-        </a>
-      </Checker>
-      <Checker val={DEXSCREENER}>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={DEXSCREENER}
-          className={buttonClass}
-        >
-          <DexscreenerIcon iconClass={iconClass} />
-        </a>
-      </Checker>
-      <Checker val={DEXTOOLS}>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={DEXTOOLS}
-          className={buttonClass}
-        >
-          <DextoolsIcon iconClass={iconClass} />
         </a>
       </Checker>
     </div>

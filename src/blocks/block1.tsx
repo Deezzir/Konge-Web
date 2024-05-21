@@ -25,15 +25,15 @@ export const Block1 = () => {
               }
             />
           </div>
-          <div className="flex flex-col w-1/2 h-[60vh] text-xl md:text-3xl font-bold text-center justify-evenly items-center">
-            <h2>
-              Have a chance to overtake the idea of WIF. Its not just another
-              boring remake of WIF, it could be a competitor of it. $WAF is a
-              cute cat with unlimited meme potential in its concept.
-            </h2>
-            <div className="flex flex-row justify-between items-center gap-16">
-              <p>Blablaafssagagsagsag</p>
-              <p>Blablaafssagagsagsag</p>
+          <div className="w-full flex flex-col md:w-1/2 text-3xl font-bold text-center gap-8 justify-evenly items-center">
+            <h2>There is only two ways:</h2>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">
+              <p className="bg-white border-2 border-black rounded-2xl p-2 w-full md:w-1/2">
+                HODL and get to the millions.
+              </p>
+              <p className="bg-white border-2 border-black rounded-2xl p-2 w-full  md:w-1/2">
+                JEET and cry later about it.
+              </p>
             </div>
           </div>
         </div>
