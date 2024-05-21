@@ -7,7 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(164, 141, 141);
+    color: white;
+    background-color: #5a5a5a;
     user-select: none;
   }
 

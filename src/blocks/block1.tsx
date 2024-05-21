@@ -28,10 +28,10 @@ export const Block1 = () => {
           <div className="w-full flex flex-col md:w-1/2 text-3xl font-bold text-center gap-8 justify-evenly items-center">
             <h2>There are only two ways:</h2>
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">
-              <p className="bg-white border-2 border-black rounded-2xl p-2 w-full md:w-1/2">
+              <p className="bg-white border-2 border-black text-black rounded-2xl p-2 w-full md:w-1/2">
                 HODL and get to the millions.
               </p>
-              <p className="bg-white border-2 border-black rounded-2xl p-2 w-full  md:w-1/2">
+              <p className="bg-white border-2 border-black text-black  rounded-2xl p-2 w-full  md:w-1/2">
                 JEET and cry later about it.
               </p>
             </div>
