@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { Img } from "react-image";
 
-export const hoverScale = "hover:scale-[1.01] transform transition duration-y";
+export const hoverScale = "hover:scale-[0.99] transform transition duration-y";
 
 export const Block2 = () => {
   const getImages = () => {
@@ -14,7 +14,10 @@ export const Block2 = () => {
             {[...Array(7)].map((_, index: any) => {
               return (
                 <Img
-                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  className={
+                    "w-auto h-auto rounded-2xl select-none object-contain " +
+                    hoverScale
+                  }
                   src={"/src/assets/block2/sqr0.webp"}
                   key={index}
                 />
@@ -27,7 +30,10 @@ export const Block2 = () => {
             {[...Array(7)].map((_, index: any) => {
               return (
                 <Img
-                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  className={
+                    "w-auto h-auto rounded-2xl select-none object-contain " +
+                    hoverScale
+                  }
                   src={"/src/assets/block2/sqr0.webp"}
                   key={index}
                 />
@@ -40,7 +46,10 @@ export const Block2 = () => {
             {[...Array(7)].map((_, index: any) => {
               return (
                 <Img
-                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  className={
+                    "w-auto h-auto rounded-2xl select-none object-contain " +
+                    hoverScale
+                  }
                   src={"/src/assets/block2/sqr0.webp"}
                   key={index}
                 />
@@ -58,7 +67,10 @@ export const Block2 = () => {
             {[...Array(7)].map((_, index: any) => {
               return (
                 <Img
-                  className="w-auto h-auto rounded-2xl select-none object-contain"
+                  className={
+                    "w-auto h-auto rounded-2xl select-none object-contain " +
+                    hoverScale
+                  }
                   src={"/src/assets/block2/sqr0.webp"}
                   key={index}
                 />
