@@ -7,6 +7,7 @@ function App() {
     <div className="flex flex-col gap-16 items-center pb-6">
       <Block1 />
       <Block2 />
+
       <Footer />
     </div>
   );
