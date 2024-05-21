@@ -1,4 +1,4 @@
-export const CA = "Coming";
+export const CA = "CeocaPX6WNeYKHvNKgKQC7wkMNNMViKgoTf2f87n1z7o";
 export const TELEGRAM = "https://t.me/WillemDaChoice";
 export const TWITTER = "https://x.com/WillemDaChoice";
 
