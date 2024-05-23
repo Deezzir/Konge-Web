@@ -8,7 +8,7 @@ import { XIcon } from "./icons/x-icon";
 const buttonClass =
   "select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105 z-50";
 
-const iconClass = "w-12 h-12 md:w-14 md:h-14 fill-white";
+const iconClass = "w-12 h-12 md:w-[4vw] md:h-[6vh] fill-black";
 
 type CheckerProps = {
   val: string;
@@ -23,7 +23,7 @@ export const Links = (props: { customClass: string }) => {
   return (
     <div
       className={
-        "w-full z-50 flex gap-8 flex-row flex-wrap max-w-screen-2xl ms-auto justify-center items-center " +
+        "w-full z-50 flex gap-8 flex-wrap lg:flex-nowrap flex-row ms-auto justify-center items-center relative " +
         props.customClass
       }
     >
@@ -32,7 +32,7 @@ export const Links = (props: { customClass: string }) => {
           target="_blank"
           rel="noreferrer"
           href={TWITTER}
-          className={buttonClass}
+          className={"transform translate-y-0 lg:-translate-y-6 " + buttonClass}
         >
           <XIcon iconClass={iconClass} />
         </a>
@@ -42,7 +42,7 @@ export const Links = (props: { customClass: string }) => {
           target="_blank"
           rel="noreferrer"
           href={TELEGRAM}
-          className={buttonClass}
+          className={"transform translate-y-0 lg:translate-y-2 " + buttonClass}
         >
           <TgIcon iconClass={iconClass} />
         </a>
@@ -52,7 +52,7 @@ export const Links = (props: { customClass: string }) => {
           target="_blank"
           rel="noreferrer"
           href={DEXSCREENER}
-          className={buttonClass}
+          className={"transform translate-y-0 lg:-translate-y-9 " + buttonClass}
         >
           <DexscreenerIcon iconClass={iconClass} />
         </a>
@@ -62,7 +62,7 @@ export const Links = (props: { customClass: string }) => {
           target="_blank"
           rel="noreferrer"
           href={RAYDIUM}
-          className={buttonClass}
+          className={"transform translate-y-0 lg:-translate-y-8 " + buttonClass}
         >
           <RaydiumIcon iconClass={iconClass} />
         </a>
@@ -72,7 +72,10 @@ export const Links = (props: { customClass: string }) => {
           target="_blank"
           rel="noreferrer"
           href={JUPITER}
-          className={buttonClass}
+          className={
+            "transform translate-x-0 lg:-translate-y-24 translate-y-0 lg:-translate-x-5 " +
+            buttonClass
+          }
         >
           <JupiterIcon iconClass={iconClass} />
         </a>

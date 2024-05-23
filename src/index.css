@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "CCMaladroit W00 Bold";
+  src: url("font.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
-    background-color: #5a5a5a;
+    color: black;
     user-select: none;
+    font-family: "CCMaladroit W00 Bold";
+  }
+
+  body {
+    background-color: #87ceeb;
   }
 
   .img-hor {

@@ -3,20 +3,28 @@ import { motion } from "framer-motion";
 
 interface BlockWrapperProps {
   children: React.ReactNode;
+  bg?: string;
 }
 
 export const BlockWrapper = (props: BlockWrapperProps) => {
   return (
-    <motion.div
-      className="relative min-h-screen flex-col gap-8 lg:gap-12 w-full flex p-4 md:p-16 md:py-8 justify-center max-w-screen-2xl items-center"
-      initial={{ opacity: 0 }}
-      transition={{
-        duration: 2,
-      }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+    <div
+      className={
+        "min-h-screen w-full flex justify-center items-center " +
+        (props.bg ? props.bg : "bg-[#87ceeb]")
+      }
     >
-      {props.children}
-    </motion.div>
+      <motion.div
+        className=""
+        initial={{ opacity: 0 }}
+        transition={{
+          duration: 1.2,
+        }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        {props.children}
+      </motion.div>
+    </div>
   );
 };

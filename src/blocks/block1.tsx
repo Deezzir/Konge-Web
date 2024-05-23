@@ -1,43 +1,52 @@
-import { BlockWrapper } from "../common/block-wrapper";
 import { Links } from "../common/links";
-import MAIN from "../assets/main.webp";
+import { BUY_LINK } from "../common/urls";
+import KONGE from "../assets/block1/logo.webp";
+import MONKEY from "../assets/block1/main.webp";
+import BUTTON from "../assets/block1/button.webp";
 import { useCallback } from "react";
 import { Img } from "react-image";
+import { BlockWrapper } from "../common/block-wrapper";
 
 export const Block1 = () => {
   const getBlock = useCallback(() => {
     return (
-      <>
-        <h1 className="font-bold text-3xl select-all">
-          Willem DaChoice : $WILLEM
-        </h1>
-        <Links customClass="" />
-        <h1 className="font-bold text-3xl">
-          CA: <span className="select-all">Coming</span>
-        </h1>
-        <div className="w-full flex flex-col md:flex-row gap-2 md:gap-16 items-center justify-between">
-          <div className="relative w-full md:w-1/2 flex justify-center items-center">
+      <div className="relative min-h-screen mt-8 lg:mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center">
+        <Img
+          src={KONGE}
+          alt="title"
+          className="h-full aspect-auto max-h-[15vh] xl:max-h-[25vh]"
+        />
+        <div className="w-full flex flex-col-reverse xl:flex-row gap-12 lg:gap-1 items-center justify-between">
+          <div className="relative w-full lg:w-[45%] flex justify-center lg:justify-start items-center">
             <Img
-              src={MAIN}
+              src={MONKEY}
               alt="logo"
-              className={
-                "h-full aspect-auto max-h-[60vh] transition duration-300 rounded-xl"
-              }
+              className="h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
             />
           </div>
-          <div className="w-full flex flex-col md:w-1/2 text-3xl font-bold text-center gap-8 justify-evenly items-center">
-            <h2>There are only two ways:</h2>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16">
-              <p className="bg-white border-2 border-black text-black rounded-2xl p-2 w-full md:w-1/2">
-                HODL and get to the millions.
-              </p>
-              <p className="bg-white border-2 border-black text-black  rounded-2xl p-2 w-full  md:w-1/2">
-                JEET and watch to the millions.
-              </p>
+          <div className="w-full flex flex-col h-full lg::h-[45vh] lg:w-[55%] text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mr-0 xl:mr-16 gap-8 px-6 justify-between items-center">
+            <h2>
+              KONGE is a degenerate gambler with anger issues on the Solana
+              network.
+            </h2>
+            <div className="flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-16">
+              <a
+                className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
+                href={BUY_LINK}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Img
+                  src={BUTTON}
+                  alt="button"
+                  className="max-h-[30vh] h-full aspect-auto"
+                />
+              </a>
+              <Links customClass="" />
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }, []);
 

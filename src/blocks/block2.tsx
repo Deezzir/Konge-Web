@@ -1,120 +1,41 @@
-import { motion } from "framer-motion";
-import { useCallback } from "react";
-
-import Marquee from "react-fast-marquee";
+import BUTTON from "../assets/block2/button.webp";
+import GIF from "../assets/block2/gif-placeholder.png";
+import TITLE from "../assets/block2/title.webp";
 import { Img } from "react-image";
-
-export const hoverScale = "hover:scale-[0.99] transform transition duration-y";
-
-function createArrayFromNtoM(n: number, m: number) {
-  let array = [];
-  for (let i = n; i <= m; i++) {
-    array.push(i);
-  }
-  return array;
-}
+import { BlockWrapper } from "../common/block-wrapper";
 
 export const Block2 = () => {
-  const arr1 = useCallback(() => {
-    return createArrayFromNtoM(1, 13);
-  }, []);
-  const arr2 = useCallback(() => {
-    return createArrayFromNtoM(14, 27);
-  }, []);
-  const arr3 = useCallback(() => {
-    return createArrayFromNtoM(28, 41);
-  }, []);
-  const arr4 = useCallback(() => {
-    return createArrayFromNtoM(42, 53);
-  }, []);
-
-  const getImages = () => {
+  const getBlock = () => {
     return (
-      <>
-        <Marquee speed={15} autoFill direction={"left"}>
-          <div className="flex flex-row gap-8 h-[25vh] ms-8">
-            {arr1().map((val: number, index: any) => {
-              return (
-                <Img
-                  className={
-                    "w-auto h-auto rounded-2xl select-none object-contain " +
-                    hoverScale
-                  }
-                  src={`./block2/will${val}.webp`}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </Marquee>
-        <Marquee speed={25} autoFill direction={"right"}>
-          <div className="flex flex-row gap-8 h-[25vh] ms-8">
-            {arr2().map((val: number, index: any) => {
-              return (
-                <Img
-                  className={
-                    "w-auto h-auto rounded-2xl select-none object-contain " +
-                    hoverScale
-                  }
-                  src={`./block2/will${val}.webp`}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </Marquee>
-        <Marquee speed={20} autoFill direction={"left"}>
-          <div className="flex flex-row gap-8 h-[25vh] ms-8">
-            {arr3().map((val: number, index: any) => {
-              return (
-                <Img
-                  className={
-                    "w-auto h-auto rounded-2xl select-none object-contain " +
-                    hoverScale
-                  }
-                  src={`./block2/will${val}.webp`}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </Marquee>
-        <Marquee
-          className="flex w-full"
-          speed={17}
-          autoFill
-          direction={"right"}
-        >
-          <div className="flex flex-row gap-8 h-[25vh] ms-8">
-            {arr4().map((val: number, index: any) => {
-              return (
-                <Img
-                  className={
-                    "w-auto h-auto rounded-2xl select-none object-contain " +
-                    hoverScale
-                  }
-                  src={`./block2/will${val}.webp`}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </Marquee>
-      </>
+      <div className="flex max-w-screen-3xl flex-col lg:flex-row gap-4 lg:gap-12 p-4 md:p-16 justify-center items-center">
+        <div className="flex h-full flex-col w-full lg:w-1/2 justify-evenly items-center gap-8 lg:gap-16 p-8">
+          <h2 className="text-2xl lg:text-4xl font-bold text-center text-[#FFD700] leading-[1.3]">
+            <span className="text-4xl lg:text-6xl text-[#FFD700]">KONGE</span>{" "}
+            is A CHAD type ape. Do nor compare it. We build different...
+          </h2>
+          <a className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer flex justify-center">
+            <Img
+              src={BUTTON}
+              alt="logo"
+              className="h-full aspect-auto w-full lg:w-[60%]"
+            />
+          </a>
+        </div>
+        <div className="flex w-full h-full lg:w-1/2 p-8 flex-col justify-center items-center">
+          <Img
+            src={GIF}
+            alt="gif"
+            className="max-h-[80vh] h-full w-auto aspect-auto border-8 border-[#FFD700]"
+          />
+          <Img
+            src={TITLE}
+            alt="title"
+            className="w-[80%] aspect-auto -translate-y-1/2"
+          />
+        </div>
+      </div>
     );
   };
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      transition={{
-        duration: 2,
-      }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="flex flex-col gap-8 min-h-screen w-full"
-    >
-      {getImages()}
-    </motion.div>
-  );
+  return <BlockWrapper bg="bg-[#333333]">{getBlock()}</BlockWrapper>;
 };
