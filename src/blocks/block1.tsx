@@ -24,12 +24,12 @@ export const Block1 = () => {
               className="h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
             />
           </div>
-          <div className="w-full flex flex-col h-full lg:h-[40vh] lg:w-[55%] text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mr-0 xl:mr-16 gap-8 px-6 justify-between items-center">
+          <div className="w-full flex flex-col h-full lg:h-[40vh] lg:w-[55%] text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mr-0 2xl:mr-16 md:gap-12 gap-8 px-12 justify-between items-center">
             <h2>
-              KONGE is a degenerate gambler with anger issues on the Solana
-              network.
+              <span className="text-4xl md:text-5xl 2xl:text-6xl">KONGE</span>{" "}
+              is a chad gambler with bulling issues on the Solana network.
             </h2>
-            <div className="flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-16">
+            <div className="flex flex-col 2xl:flex-row justify-between items-center gap-8 xl:gap-16">
               <a
                 className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
                 href={BUY_LINK}
@@ -39,7 +39,7 @@ export const Block1 = () => {
                 <Img
                   src={BUTTON1}
                   alt="button1"
-                  className="max-h-[30vh] h-full aspect-auto"
+                  className="2xl:max-h-[30vh] max-h-[15vh] w-full h-auto aspect-auto"
                 />
               </a>
               <Links customClass="" />

@@ -24,14 +24,14 @@ export const Block3 = () => {
             <Img src={MONKEY3} alt="monkey3" className="w-full aspect-auto" />
           </div>
           <div className="w-full flex flex-col h-full lg:h-[50vh] lg:w-[45%] mr-0 xl:mr-16 gap-8 px-6 justify-center items-center relative">
-            <div className="relative flex h-full w-full">
+            <div className="relative flex h-full w-full p-4">
               <Img
                 src={BANNER3}
                 alt="banner3"
                 className="w-full h-full absolute top-0 left-0 z-0"
               />
               <div className="w-full flex flex-col justify-center items-center z-50">
-                <ul className="list-disc flex flex-col space-y-6 uppercase text-left text-2xl md:text-3xl 2xl:text-4xl font-bold">
+                <ul className="list-disc flex flex-col space-y-2 md:space-y-6 uppercase text-left text-2xl md:text-3xl 2xl:text-4xl font-bold">
                   <li>Doing airdrop</li>
                   <li>Launching at pump.fun</li>
                   <li>BULLING PONKE</li>

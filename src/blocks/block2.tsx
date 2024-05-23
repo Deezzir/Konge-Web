@@ -26,7 +26,7 @@ export const Block2 = () => {
           <Img
             src={GIF2}
             alt="gif2"
-            className="max-h-[80vh] h-full w-auto aspect-auto border-8 border-[#FFD700]"
+            className="max-h-[40vh] md:max-h-[70vh] h-auto w-full aspect-auto border-8 border-[#FFD700]"
           />
           <Img
             src={TITLE2}
