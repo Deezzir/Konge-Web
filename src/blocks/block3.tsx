@@ -85,7 +85,7 @@ export const Block3 = () => {
                 <ul className="flex flex-col space-y-2 md:space-y-6 uppercase md:text-left text-2xl md:text-3xl 2xl:text-4xl font-bold">
                   <li>• Doing airdrop</li>
                   <li>• Launching at pump.fun</li>
-                  <li>• BULLING PONKE</li>
+                  <li>• BULLYING PONKE</li>
                   <li>• Mooning konge</li>
                 </ul>
               </div>

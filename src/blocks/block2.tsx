@@ -20,7 +20,7 @@ export const Block2 = () => {
             <span className="text-3xl md:text-4xl 2xl:text-5xl text-[#FFD700]">
               KONGE
             </span>{" "}
-            is A CHAD type ape. Do nor compare it. We build different...
+            is A CHAD type ape. Do not compare it. We build different...
           </h2>
           <a className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer flex justify-center">
             <Img

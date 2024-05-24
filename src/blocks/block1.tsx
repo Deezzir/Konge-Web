@@ -29,7 +29,7 @@ export const Block1 = () => {
               <span className="text-4xl md:text-5xl 2xl:text-6xl text-[#000113]">
                 KONGE
               </span>{" "}
-              is a chad gambler with bulling issues on the Solana network.
+              is a chad gambler with bullying issues on the Solana network.
             </h2>
             <div className="flex flex-col 2xl:flex-row justify-between items-center gap-8 xl:gap-16">
               <a
