@@ -3,6 +3,7 @@ import { BUY_LINK } from "../common/urls";
 import TITLE1 from "../assets/block1/title.webp";
 import MONKEY1 from "../assets/block1/main.webp";
 import BUTTON1 from "../assets/block1/button.webp";
+import SWAY1 from "../assets/block1/sway.webp";
 import { useCallback } from "react";
 import { Img } from "react-image";
 import { BlockWrapper } from "../common/block-wrapper";
@@ -10,17 +11,24 @@ import { BlockWrapper } from "../common/block-wrapper";
 export const Block1 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative min-h-screen mt-8 lg:mt-4 flex-col gap-8 md:gap-4 w-full flex justify-between items-center">
+      <div className="relative min-h-screen flex-col gap-8 md:gap-4 w-full flex justify-between items-center">
+        <div className="top-0 right-[8%] -translate-y-[10px] absolute">
+          <Img
+            src={SWAY1}
+            alt="sway"
+            className="h-[25vh] w-auto aspect-auto sway-monkey"
+          />
+        </div>
         <Img
           src={TITLE1}
-          alt="title1"
-          className="h-full w-auto aspect-auto max-h-[15vh] xl:max-h-[25vh]"
+          alt="title"
+          className="h-full w-auto aspect-auto max-h-[15vh] xl:max-h-[25vh] mt-8 lg:mt-4"
         />
         <div className="w-full flex flex-col-reverse xl:flex-row gap-12 lg:gap-1 items-center justify-between">
           <div className="relative w-full lg:w-[45%] flex justify-center lg:justify-start items-center">
             <Img
               src={MONKEY1}
-              alt="monkey1"
+              alt="monkey"
               className="pl-2 h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
             />
           </div>
@@ -40,7 +48,7 @@ export const Block1 = () => {
               >
                 <Img
                   src={BUTTON1}
-                  alt="button1"
+                  alt="button"
                   className="2xl:max-h-[30vh] max-h-[15vh] w-full h-auto aspect-auto"
                 />
               </a>
