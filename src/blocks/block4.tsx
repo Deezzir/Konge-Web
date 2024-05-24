@@ -49,7 +49,7 @@ export const Block4 = () => {
               WebkitTextStrokeWidth: "4px",
             }}
           >
-            50% BURN
+            ??% BURN
           </p>
           <p
             className="text-[#FFD700] z-50"

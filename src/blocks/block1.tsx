@@ -10,7 +10,7 @@ import { BlockWrapper } from "../common/block-wrapper";
 export const Block1 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative min-h-screen mt-8 lg:mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center">
+      <div className="relative min-h-screen mt-8 lg:mt-4 flex-col gap-8 md:gap-4 w-full flex justify-between items-center">
         <Img
           src={TITLE1}
           alt="title1"

@@ -4,6 +4,7 @@ import { Block2 } from "./blocks/block2";
 import { Footer } from "./blocks/footer";
 import { Block3 } from "./blocks/block3";
 import { Block4 } from "./blocks/block4";
+import { Block5 } from "./blocks/block5";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Block2 />
       <Block3 />
       <Block4 />
+      <Block5 />
       <Footer />
     </div>
   );

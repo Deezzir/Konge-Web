@@ -3,7 +3,7 @@ import { BlockWrapper } from "../common/block-wrapper";
 import BUTTON3 from "../assets/block3/button.webp";
 import TITLE3 from "../assets/block3/title.webp";
 import BANNER3 from "../assets/block3/banner.webp";
-import MONKEY3 from "../assets/block3/monkey-placeholder.webp";
+import MONKEY3 from "../assets/block3/monkey.webp";
 import { Img } from "react-image";
 import CLOUD1 from "../assets/block3/cloud1.webp";
 import CLOUD2 from "../assets/block3/cloud2.webp";
