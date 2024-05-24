@@ -4,11 +4,7 @@
 
 @font-face {
   font-family: "CCMaladroit W00 Bold";
-  src: url("font/font.eot");
-  src: url("font/font.eot?#iefix") format("embedded-opentype"),
-    url("font/font.woff") format("woff"), url("font/font.woff2") format("woff2"),
-    url("font/font.ttf") format("truetype"),
-    url("font/font.svg#CCMaladroit W00 Bold") format("svg");
+  src: url("font/font.woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
