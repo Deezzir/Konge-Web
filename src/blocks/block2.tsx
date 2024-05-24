@@ -10,7 +10,13 @@ export const Block2 = () => {
     return (
       <div className="flex max-w-screen-3xl flex-col lg:flex-row gap-4 lg:gap-12 p-4 md:p-16 justify-center items-center">
         <div className="flex h-full flex-col w-full lg:w-1/2 justify-evenly items-center gap-8 lg:gap-16 p-8">
-          <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center text-[#FFD700] leading-[1.3]">
+          <h2
+            className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center text-[#FFD700] leading-[1.3] drop-shadow-xl"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "3px",
+            }}
+          >
             <span className="text-3xl md:text-4xl 2xl:text-5xl text-[#FFD700]">
               KONGE
             </span>{" "}

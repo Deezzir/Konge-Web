@@ -9,36 +9,61 @@ import CLOUD1 from "../assets/block3/cloud1.webp";
 import CLOUD2 from "../assets/block3/cloud2.webp";
 import CLOUD3 from "../assets/block3/cloud3.webp";
 import CLOUD4 from "../assets/block3/cloud4.webp";
+import { MovingImg } from "../common/moving-img";
 
 export const Block3 = () => {
   const getBlock = useCallback(() => {
     return (
       <div className="relative min-h-screen mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center">
         <div className="flex md:flex-row justify-center items-center w-full gap-6 2xl:gap-12">
-          <Img
-            src={CLOUD1}
-            alt="cloud"
-            className="h-full aspect-auto max-h-[7vh] xl:max-h-[10vh] mt-12 -translate-y-12 hidden lg:block"
+          <MovingImg
+            imgPath={CLOUD1}
+            alt={"cloud"}
+            customClassWrapper={"mt-12  hidden lg:block"}
+            customClassImg={
+              "h-full w-full -translate-y-10 aspect-auto h-[30vh] object-contain"
+            }
+            ty={7}
+            tx={1}
+            tz={1}
           />
-          <Img
-            src={CLOUD2}
-            alt="cloud"
-            className="h-full aspect-auto max-h-[7vh] xl:max-h-[10vh] mt-12 translate-y-10 hidden lg:block"
+          <MovingImg
+            imgPath={CLOUD2}
+            alt={"cloud"}
+            customClassWrapper={"mt-12 hidden lg:block"}
+            customClassImg={
+              "h-full w-full translate-y-3 aspect-auto h-[30vh] object-contain"
+            }
+            ty={5}
+            tx={1}
+            tz={1}
           />
           <Img
             src={TITLE3}
             alt="title"
             className="w-auto h-full aspect-auto max-h-[10vh] 2xl:max-h-[15vh] mt-12"
           />
-          <Img
-            src={CLOUD3}
-            alt="cloud"
-            className="h-full aspect-auto max-h-[7vh] xl:max-h-[10vh] mt-12 translate-y-10 hidden lg:block"
+          <MovingImg
+            imgPath={CLOUD3}
+            alt={"cloud"}
+            customClassWrapper={"mt-12 hidden lg:block"}
+            customClassImg={
+              "h-full w-full translate-y-5 aspect-auto h-[30vh] object-contain"
+            }
+            ty={5}
+            tx={1}
+            tz={1}
           />
-          <Img
-            src={CLOUD4}
-            alt="cloud"
-            className="h-full aspect-auto max-h-[7vh] xl:max-h-[10vh] mt-12 -translate-y-12 hidden lg:block"
+          <MovingImg
+            imgPath={CLOUD4}
+            alt={"cloud"}
+            customClassWrapper={"mt-12 hidden lg:block"}
+            customClassImg={
+              "h-full w-full -translate-y-12 aspect-auto h-[30vh] object-contain"
+            }
+            ty={7}
+            tx={1}
+            tz={1}
           />
         </div>
         <div className="w-full flex flex-col-reverse xl:flex-row gap-12 lg:gap-1 items-center justify-between">

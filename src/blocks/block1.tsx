@@ -25,8 +25,10 @@ export const Block1 = () => {
             />
           </div>
           <div className="w-full flex flex-col h-full lg:h-[40vh] lg:w-[55%] text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mr-0 2xl:mr-16 md:gap-12 gap-8 px-12 justify-between items-center">
-            <h2>
-              <span className="text-4xl md:text-5xl 2xl:text-6xl">KONGE</span>{" "}
+            <h2 className="text-[#000113]">
+              <span className="text-4xl md:text-5xl 2xl:text-6xl text-[#000113]">
+                KONGE
+              </span>{" "}
               is a chad gambler with bulling issues on the Solana network.
             </h2>
             <div className="flex flex-col 2xl:flex-row justify-between items-center gap-8 xl:gap-16">

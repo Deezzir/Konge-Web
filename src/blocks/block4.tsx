@@ -9,7 +9,7 @@ import { Img } from "react-image";
 export const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative overflow-hidden min-h-screen flex-col gap-[8rem] w-full flex justify-start items-center">
+      <div className="relative overflow-hidden min-h-screen flex-col gap-[12rem] w-full flex justify-start items-center">
         <Img
           src={TITLE4}
           alt="title"
@@ -29,15 +29,15 @@ export const Block4 = () => {
             className="h-auto w-full aspect-auto pl-2 translate-x-[10%]"
           />
         </div>
-        <div className="w-full lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-12 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
-          <div className="size-full w-full absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/4 z-0">
+        <div className="w-full lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-10 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
+          <div className="w-[98%] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[18%] z-0">
             <Img src={PIE} alt="pie" className="w-full pie" />
           </div>
           <p
-            className="text-[#FFD700] z-50"
+            className="text-[#FFD700] z-50 font-extrabold"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "4px",
+              WebkitTextStrokeWidth: "5px",
             }}
           >
             TOTAL SUPPLY 1,000,000,000 $KONGE
@@ -46,7 +46,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "4px",
+              WebkitTextStrokeWidth: "5px",
             }}
           >
             ??% BURN
@@ -55,7 +55,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "4px",
+              WebkitTextStrokeWidth: "5px",
             }}
           >
             3% TEAM
@@ -64,7 +64,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "4px",
+              WebkitTextStrokeWidth: "5px",
             }}
           >
             7% AIRDROP
@@ -73,7 +73,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "4px",
+              WebkitTextStrokeWidth: "5px",
             }}
           >
             7% PRESALE
