@@ -9,7 +9,7 @@ import { Img } from "react-image";
 export const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative overflow-hidden min-h-screen flex-col gap-2 w-full lg:pb-24 flex justify-between items-center">
+      <div className="relative overflow-hidden min-h-screen flex-col gap-[12rem] lg:gap-2 w-full lg:pb-24 flex justify-start lg:justify-between items-center">
         <Img
           src={TITLE4}
           alt="title"
@@ -37,7 +37,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50 font-extrabold"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "5px",
+              WebkitTextStrokeWidth: "4px",
             }}
           >
             TOTAL SUPPLY 1,000,000,000 $KONGE
@@ -46,7 +46,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "5px",
+              WebkitTextStrokeWidth: "4px",
             }}
           >
             ??% BURN
@@ -55,7 +55,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "5px",
+              WebkitTextStrokeWidth: "4px",
             }}
           >
             3% TEAM
@@ -64,7 +64,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "5px",
+              WebkitTextStrokeWidth: "4px",
             }}
           >
             7% AIRDROP
@@ -73,7 +73,7 @@ export const Block4 = () => {
             className="text-[#FFD700] z-50"
             style={{
               WebkitTextStrokeColor: "black",
-              WebkitTextStrokeWidth: "5px",
+              WebkitTextStrokeWidth: "4px",
             }}
           >
             7% PRESALE
