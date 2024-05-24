@@ -19,14 +19,14 @@ export const Block4 = () => {
           <Img
             src={MONKEY4}
             alt="monkey"
-            className="h-full w-auto aspect-auto pl-2 -translate-x-[10%]"
+            className="h-auto w-full aspect-auto pl-2 -translate-x-[10%]"
           />
         </div>
         <div className="w-1/2 lg:w-[40%] absolute bottom-0 right-0 z-50">
           <Img
             src={MONKEY42}
             alt="monkey"
-            className="h-full w-auto aspect-auto pl-2 translate-x-[10%]"
+            className="h-auto w-full aspect-auto pl-2 translate-x-[10%]"
           />
         </div>
         <div className="w-full lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-12 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
