@@ -1,12 +1,85 @@
-import { BlockWrapper } from "../common/block-wrapper";
 import { useCallback } from "react";
+import { BlockWrapper } from "../common/block-wrapper";
+import TITLE4 from "../assets/block4/title.webp";
+import MONKEY4 from "../assets/block4/monkey.webp";
+import MONKEY42 from "../assets/block4/monkey2.webp";
+import PIE from "../assets/block4/pie.webp";
+import { Img } from "react-image";
 
 export const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
-      <>
-        <div className="flex max-w-screen-3xl flex-row gap-8 lg:gap-12 p-4 md:p-16 justify-center items-center"></div>
-      </>
+      <div className="relative overflow-hidden min-h-screen flex-col gap-[8rem] w-full flex justify-start items-center">
+        <Img
+          src={TITLE4}
+          alt="title"
+          className="h-full w-auto aspect-auto max-h-[10vh] xl:max-h-[15vh] mt-12"
+        />
+        <div className="w-1/2 lg:w-[40%] absolute bottom-0 left-0 z-50">
+          <Img
+            src={MONKEY4}
+            alt="monkey"
+            className="h-full w-auto aspect-auto pl-2 -translate-x-[10%]"
+          />
+        </div>
+        <div className="w-1/2 lg:w-[40%] absolute bottom-0 right-0 z-50">
+          <Img
+            src={MONKEY42}
+            alt="monkey"
+            className="h-full w-auto aspect-auto pl-2 translate-x-[10%]"
+          />
+        </div>
+        <div className="w-full lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-12 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
+          <div className="size-full w-full absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/4 z-0">
+            <Img src={PIE} alt="pie" className="w-full pie" />
+          </div>
+          <p
+            className="text-[#FFD700] z-50"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "4px",
+            }}
+          >
+            TOTAL SUPPLY 1,000,000,000 $KONGE
+          </p>
+          <p
+            className="text-[#FFD700] z-50"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "4px",
+            }}
+          >
+            50% BURN
+          </p>
+          <p
+            className="text-[#FFD700] z-50"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "4px",
+            }}
+          >
+            3% TEAM
+          </p>
+          <p
+            className="text-[#FFD700] z-50"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "4px",
+            }}
+          >
+            7% AIRDROP
+          </p>
+          <p
+            className="text-[#FFD700] z-50"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "4px",
+            }}
+          >
+            7% PRESALE
+          </p>
+        </div>
+      </div>
     );
   }, []);
 

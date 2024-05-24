@@ -1,6 +1,6 @@
 import { Links } from "../common/links";
 import { BUY_LINK } from "../common/urls";
-import KONGE1 from "../assets/block1/logo.webp";
+import TITLE1 from "../assets/block1/title.webp";
 import MONKEY1 from "../assets/block1/main.webp";
 import BUTTON1 from "../assets/block1/button.webp";
 import { useCallback } from "react";
@@ -12,16 +12,16 @@ export const Block1 = () => {
     return (
       <div className="relative min-h-screen mt-8 lg:mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center">
         <Img
-          src={KONGE1}
+          src={TITLE1}
           alt="title1"
-          className="h-full aspect-auto max-h-[15vh] xl:max-h-[25vh]"
+          className="h-full w-auto aspect-auto max-h-[15vh] xl:max-h-[25vh]"
         />
         <div className="w-full flex flex-col-reverse xl:flex-row gap-12 lg:gap-1 items-center justify-between">
           <div className="relative w-full lg:w-[45%] flex justify-center lg:justify-start items-center">
             <Img
               src={MONKEY1}
               alt="monkey1"
-              className="h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
+              className="pl-2 h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
             />
           </div>
           <div className="w-full flex flex-col h-full lg:h-[40vh] lg:w-[55%] text-3xl md:text-4xl 2xl:text-5xl font-bold text-center mr-0 2xl:mr-16 md:gap-12 gap-8 px-12 justify-between items-center">

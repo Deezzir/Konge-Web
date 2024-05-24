@@ -15,7 +15,7 @@ export const BlockWrapper = (props: BlockWrapperProps) => {
       }
     >
       <motion.div
-        className=""
+        className="w-full"
         initial={{ opacity: 0 }}
         transition={{
           duration: 1.2,
