@@ -9,7 +9,7 @@ import { Img } from "react-image";
 export const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative overflow-hidden min-h-screen flex-col gap-[12rem] w-full flex justify-start items-center">
+      <div className="relative overflow-hidden min-h-screen flex-col gap-2 w-full lg:pb-24 flex justify-between items-center">
         <Img
           src={TITLE4}
           alt="title"
