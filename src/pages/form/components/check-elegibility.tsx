@@ -9,7 +9,8 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 //FIX ENV
-export const SERVER = "http://localhost:5000";
+export const SERVER =
+  import.meta.env.REACT_APP_SERVER || "http://localhost:5000";
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
@@ -28,7 +29,7 @@ export const CheckElegibility = () => {
     }
 
     axios
-      .post(process.env.REACT_APP_SERVER + "/drop/check", {
+      .post(import.meta.env.REACT_APP_SERVER + "/drop/check", {
         wallet: walletToSend,
       })
       .then((response) => {
