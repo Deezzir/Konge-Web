@@ -15,12 +15,14 @@ export const Block1 = () => {
         <div className="top-0 right-[8%] -translate-y-[10px] absolute">
           <Img
             src={SWAY1}
+            fetchPriority="high"
             alt="sway"
             className="h-[25vh] w-auto aspect-auto sway-monkey"
           />
         </div>
         <Img
           src={TITLE1}
+          fetchPriority="high"
           alt="title"
           className="h-full w-auto aspect-auto max-h-[15vh] xl:max-h-[25vh] mt-8 lg:mt-4"
         />
@@ -28,6 +30,7 @@ export const Block1 = () => {
           <div className="relative w-full lg:w-[45%] flex justify-center lg:justify-start items-center">
             <Img
               src={MONKEY1}
+              fetchPriority="high"
               alt="monkey"
               className="pl-2 h-full aspect-auto max-h-[50vh] lg:max-h-[75vh]"
             />
@@ -48,6 +51,7 @@ export const Block1 = () => {
               >
                 <Img
                   src={BUTTON1}
+                  fetchPriority="high"
                   alt="button"
                   className="2xl:max-h-[30vh] max-h-[15vh] w-full h-auto aspect-auto"
                 />
