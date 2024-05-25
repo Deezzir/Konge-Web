@@ -8,8 +8,8 @@ import {
 } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const SERVER = process.env.REACT_APP_SERVER || "http://localhost:5000";
+//FIX ENV
+export const SERVER = "http://localhost:5000";
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
