@@ -11,7 +11,7 @@ import CLOUD3 from "../../assets/block3/cloud3.webp";
 import CLOUD4 from "../../assets/block3/cloud4.webp";
 import { MovingImg } from "../../common/moving-img";
 
-export const Block3 = () => {
+const Block3 = () => {
   const getBlock = useCallback(() => {
     return (
       <div className="relative min-h-screen mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center overflow-y-hidden">
@@ -110,3 +110,5 @@ export const Block3 = () => {
 
   return <BlockWrapper>{getBlock()}</BlockWrapper>;
 };
+
+export default Block3;

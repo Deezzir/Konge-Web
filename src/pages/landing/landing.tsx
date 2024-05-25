@@ -1,14 +1,21 @@
-import { useState, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { Block1 } from "./block1";
-import { Block2 } from "./block2";
+// import { Block1 } from "./block1";
+// import { Block2 } from "./block2";
+// import { Block3 } from "./block3";
+// import { Block4 } from "./block4";
+// import { Block5 } from "./block5";
 import { Footer } from "../../common/footer";
-import { Block3 } from "./block3";
-import { Block4 } from "./block4";
-import { Block5 } from "./block5";
 import DIVIDER from "../../assets/divider.webp";
 import { Img } from "react-image";
 import SWAY from "../../assets/block1/sway.webp";
+import React from "react";
+
+const Block1 = React.lazy(() => import("./block1"));
+const Block2 = React.lazy(() => import("./block2"));
+const Block3 = React.lazy(() => import("./block3"));
+const Block4 = React.lazy(() => import("./block4"));
+const Block5 = React.lazy(() => import("./block5"));
 
 export const Landing = () => {
   const [loading, setLoading] = useState(true);

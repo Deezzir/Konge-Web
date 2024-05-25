@@ -108,3 +108,5 @@ export const Block5 = () => {
     </>
   );
 };
+
+export default Block5;

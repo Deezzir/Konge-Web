@@ -6,7 +6,7 @@ import MONKEY42 from "../../assets/block4/monkey2.webp";
 import PIE from "../../assets/block4/pie.webp";
 import { Img } from "react-image";
 
-export const Block4 = () => {
+const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
       <div className="relative overflow-hidden min-h-screen flex-col gap-[12rem] lg:gap-2 w-full lg:pb-24 flex justify-start lg:justify-between items-center">
@@ -85,3 +85,5 @@ export const Block4 = () => {
 
   return <BlockWrapper bg="bg-[#333333]">{getBlock()}</BlockWrapper>;
 };
+
+export default Block4;

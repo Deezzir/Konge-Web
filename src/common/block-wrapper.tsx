@@ -18,7 +18,7 @@ export const BlockWrapper = (props: BlockWrapperProps) => {
         className="w-full"
         initial={{ opacity: 0 }}
         transition={{
-          duration: 1.2,
+          duration: 2,
         }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
