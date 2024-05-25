@@ -36,8 +36,7 @@ export const AboutDrop = (props: AboutDropProps) => {
             </h1>
             <h1 className="font-bold text-center">
               Presale enrolls: {props.dropInfo.numberOfPresaleUsers}/
-              {props.dropInfo.numberOfMaxPresaleUsers} | Total:{" "}
-              {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
+              {props.dropInfo.numberOfMaxPresaleUsers}
             </h1>
             <h1 className="font-bold text-center">
               Total: {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
