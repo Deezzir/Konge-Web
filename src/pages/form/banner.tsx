@@ -72,7 +72,7 @@ export const Banner = () => {
                   $TOME Airdrop Instructions
                 </p>
               </div>
-              <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-3xl text-white">
+              <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-2xl text-white">
                 <p className="text-white">1) ENTER YOUR SOL ADRESS</p>
                 <p className="text-white">2) ENTER YOUR TWITTER @</p>
                 <p className="text-white">3) FOLLOW @tarotofmeme</p>
@@ -88,23 +88,19 @@ export const Banner = () => {
               </div>
               <div className="flex flex-col gap-2 md:gap-2 justify-center align-middle w-full items-center">
                 <button
+                  style={{
+                    WebkitTextStrokeColor: "black",
+                    WebkitTextStrokeWidth: "3px",
+                  }}
                   className={
-                    "w-7/12 md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform text-6xl " +
+                    "w-7/12 md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform text-[#FFD700] text-6xl " +
                     (isButtonEnabled ? "hover:scale-[1.1]" : " opacity-50")
                   }
                   // @ts-expect-error This error is expected because the 'handleClose' function is not explicitly typed.
                   onClick={handleClose}
                 >
-                  ENTER
+                  {timeLeft === 0 ? "ENTER" : timeLeft}
                 </button>
-                <p
-                  className={
-                    "text-lg md:text-4xl font-bold text-white " +
-                    (timeLeft === 0 ? "hidden" : "")
-                  }
-                >
-                  {timeLeft}
-                </p>
               </div>
             </div>
           </Box>
