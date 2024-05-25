@@ -3,6 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { PublicKey } from "@solana/web3.js";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
+
 export const FormattedMessages = ({ messages }: { messages: string[] }) => (
   <div>
     {messages.map((msg, index) => (
@@ -13,6 +14,7 @@ export const FormattedMessages = ({ messages }: { messages: string[] }) => (
   </div>
 );
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const checkWallet = (wallet: string) => {
   let validWallet = true;
   try {
@@ -23,10 +25,12 @@ export const checkWallet = (wallet: string) => {
   return wallet.length >= 34 && wallet.length <= 44 && validWallet;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const checkXUsername = (username: string) => {
   return /^@?[0-9a-zA-Z_]{1,15}$/.test(username);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const checkXPostLink = (link: string, username: string) => {
   const regex =
     /^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/([a-zA-Z0-9_]{1,15})\/status\/([0-9]+)(\?.*)?$/;
@@ -35,14 +39,17 @@ export const checkXPostLink = (link: string, username: string) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sanitizeWallet = (wallet: string) => {
   return wallet.replace(/\s/g, "");
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sanitizeXUsername = (username: string) => {
   return username.replace(/\s/g, "").replace(/^@/, "");
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sanitizeXPostLink = (link: string) => {
   if (!link) return "";
   const url = new URL(link.replace(/\s/g, ""));
@@ -68,6 +75,7 @@ export interface DropInfo {
   xAge: number;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sendSuccessNotification = (text: string | JSX.Element) => {
   toast.success(text, {
     position: "top-right",
@@ -82,6 +90,7 @@ export const sendSuccessNotification = (text: string | JSX.Element) => {
   });
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sendWarningNotification = (text: string | JSX.Element) => {
   toast.warning(text, {
     position: "top-right",
@@ -96,6 +105,7 @@ export const sendWarningNotification = (text: string | JSX.Element) => {
   });
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sendErrorNotification = (text: string | JSX.Element) => {
   toast.error(text, {
     position: "top-right",
@@ -110,6 +120,7 @@ export const sendErrorNotification = (text: string | JSX.Element) => {
   });
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sendEnrollNotification = (status: string | undefined) => {
   return toast(<EnrollToast status={status} text={undefined} />, {
     position: "top-right",
@@ -124,6 +135,7 @@ export const sendEnrollNotification = (status: string | undefined) => {
   });
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sendTxNotification = (
   status: string | undefined,
   signature: string | undefined
