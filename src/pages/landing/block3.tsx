@@ -14,8 +14,8 @@ import { MovingImg } from "../../common/moving-img";
 export const Block3 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative min-h-screen mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center">
-        <div className="flex md:flex-row justify-center items-center w-full gap-6 2xl:gap-12">
+      <div className="relative min-h-screen mt-0 flex-col gap-8 md:gap-6 w-full flex justify-between items-center overflow-y-hidden">
+        <div className="flex md:flex-row justify-center items-center w-full gap-6 2xl:gap-12 overflow-x-clip">
           <MovingImg
             imgPath={CLOUD1}
             alt={"cloud"}
