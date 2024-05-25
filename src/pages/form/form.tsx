@@ -5,9 +5,10 @@ import { SignUpUpdate } from "./components/airdrop/signup-update";
 import { useCountdown } from "../../hooks/useCountdown";
 import axios from "axios";
 import { sendErrorNotification, DropInfo } from "./utils";
-// import { Presale } from "./components/presale/presale";
+import { Presale } from "./components/presale/presale";
 import { BlockWrapper } from "../../common/block-wrapper";
 import { Banner } from "./banner";
+import { Footer } from "../../common/footer";
 
 export const Form = () => {
   const [, setShowBanner] = useState(false);
@@ -37,6 +38,7 @@ export const Form = () => {
     axios
       .get(import.meta.env.REACT_APP_SERVER + "/drop/details")
       .then((response: { data: DropInfo }) => {
+        if (!response.data.numberOfMaxAirdropUsers) throw new Error("No data");
         setDropInfo(response.data as DropInfo);
         setTimeout(() => {
           setIsLoading(false);
@@ -52,16 +54,15 @@ export const Form = () => {
   const blured = days + hours + minutes + seconds <= 0;
   const blurredAirdrop =
     dropInfo.numberOfAirdropUsers >= dropInfo.numberOfMaxAirdropUsers;
-
-  //   const blurredPresale =
-  //     dropInfo.numberOfPresaleUsers >= dropInfo.numberOfMaxPresaleUsers;
+  const blurredPresale =
+    dropInfo.numberOfPresaleUsers >= dropInfo.numberOfMaxPresaleUsers;
 
   return (
     <BlockWrapper>
       {/* @ts-expect-error Error */}
       <Banner close={setShowBanner} dropInfo={dropInfo} />
       <div
-        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-black"
+        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-[#333333]"
         style={{ wordSpacing: "5px" }}
       >
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
@@ -95,12 +96,12 @@ export const Form = () => {
               <SignUpUpdate dropInfo={dropInfo} />
             </div>
           </div>
-          {/* <div className="w-full xl:w-[8%] flex justify-self-center self-center justify-center items-center">
+          <div className="w-full xl:w-[8%] flex justify-self-center self-center justify-center items-center">
             <h1 className="text-3xl text-center font-bold uppercase text-white">
               OR
             </h1>
-          </div> */}
-          {/* <div className="w-full xl:w-[46%] relative">
+          </div>
+          <div className="w-full xl:w-[46%] relative">
             {blurredPresale && (
               <h3 className="text-3xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
                 Presale enrollment is done
@@ -116,7 +117,7 @@ export const Form = () => {
             >
               <Presale dropInfo={dropInfo} />
             </div>
-          </div> */}
+          </div>
         </div>
         {/* <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-2 lg:p-4 text-xl md:text-3xl font-bold text-center text-white">
@@ -126,6 +127,7 @@ export const Form = () => {
           </h1>
         </div> */}
       </div>
+      <Footer customClass="bg-[#333333] text-white" />
     </BlockWrapper>
   );
 };

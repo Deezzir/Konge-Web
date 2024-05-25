@@ -314,12 +314,12 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
           >
             Sign up for Airdrop
           </button>
-          {/* <ReCAPTCHA
+          <ReCAPTCHA
             className="min-h-[78px] self-center"
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ref={recaptcha as any}
-            sitekey={import.meta.env.REACT_APP_SITE_KEY as string}
-          /> */}
+            sitekey={(import.meta.env.RECAPTCHA_KEY as string) || "eagagagaga"}
+          />
         </div>
 
         <p className="text-center mt-24 text-2xl">

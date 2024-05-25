@@ -229,7 +229,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
             Buy Presale
           </button>
         </div>
-        <p className="text-center mt-4">
+        <p className="text-center mt-24 text-2xl">
           <span className="font-bold uppercase">
             {props.dropInfo.presaleTokenAmount}% of tokens
           </span>{" "}

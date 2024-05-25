@@ -34,11 +34,11 @@ export const AboutDrop = (props: AboutDropProps) => {
               Airdrop enrolls: {props.dropInfo.numberOfAirdropUsers}/
               {props.dropInfo.numberOfMaxAirdropUsers}
             </h1>
-            {/* <h1 className="font-bold text-center md:text-right">
+            <h1 className="font-bold text-center md:text-right">
               Presale enrolls: {props.dropInfo.numberOfPresaleUsers}/
               {props.dropInfo.numberOfMaxPresaleUsers} | Total:{" "}
               {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
-            </h1> */}
+            </h1>
           </>
         ) : (
           <div className="flex justify-start items-center self-center justify-self-center">

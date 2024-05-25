@@ -8,7 +8,7 @@ import {
 } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 
-//FIX ENV
+// eslint-disable-next-line react-refresh/only-export-components
 export const SERVER =
   import.meta.env.REACT_APP_SERVER || "http://localhost:5000";
 

@@ -68,34 +68,39 @@ export const Banner = () => {
           <Box sx={style}>
             <div className="flex flex-col items-center h-fit p-4 w-full md:gap-8 text-white text-center form uppercase justify-between">
               <div className="flex w-full justify-center">
-                <p className="text-xl md:text-5xl mb-12">
+                <p className="text-xl md:text-5xl mb-12 text-white">
                   $TOME Airdrop Instructions
                 </p>
               </div>
-              <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-3xl">
-                <p>1) ENTER YOUR SOL ADRESS</p>
-                <p>2) ENTER YOUR TWITTER @</p>
-                <p>3) FOLLOW @tarotofmeme</p>
-                <p className="mb-6">
+              <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-3xl text-white">
+                <p className="text-white">1) ENTER YOUR SOL ADRESS</p>
+                <p className="text-white">2) ENTER YOUR TWITTER @</p>
+                <p className="text-white">3) FOLLOW @tarotofmeme</p>
+                <p className="mb-6 text-white">
                   4) MAKE A POST USING $TOME, @tarotofmeme AND PICTURE
                 </p>
-                <p>Example: I am wif $TOME @tarotofmem</p>
-                <p>Twitter account should be 60+ days old and 40+ followers</p>
+                <p className="text-white">
+                  Example: I am wif $TOME @tarotofmem
+                </p>
+                <p className="text-white">
+                  Twitter account should be 60+ days old and 40+ followers
+                </p>
               </div>
               <div className="flex flex-col gap-2 md:gap-2 justify-center align-middle w-full items-center">
-                <img
+                <button
                   className={
-                    "w-7/12 md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
+                    "w-7/12 md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform text-6xl " +
                     (isButtonEnabled ? "hover:scale-[1.1]" : " opacity-50")
                   }
                   // @ts-expect-error This error is expected because the 'handleClose' function is not explicitly typed.
                   onClick={handleClose}
-                  src="./form/enter.webp"
-                />
+                >
+                  ENTER
+                </button>
                 <p
                   className={
-                    "text-lg md:text-4xl font-bold " +
-                    (timeLeft === 0 ? "text-transparent" : "")
+                    "text-lg md:text-4xl font-bold text-white " +
+                    (timeLeft === 0 ? "hidden" : "")
                   }
                 >
                   {timeLeft}
