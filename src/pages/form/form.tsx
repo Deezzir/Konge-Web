@@ -10,7 +10,7 @@ import { BlockWrapper } from "../../common/block-wrapper";
 import { Banner } from "./banner";
 
 export const Form = () => {
-  const [showBanner, setShowBanner] = useState(false);
+  const [, setShowBanner] = useState(false);
   const [dropInfo, setDropInfo] = useState<DropInfo>({
     numberOfMaxAirdropUsers: 75,
     numberOfMaxPresaleUsers: 500,
