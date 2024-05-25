@@ -9,8 +9,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const SERVER =
-  import.meta.env.REACT_APP_SERVER || "http://localhost:5000";
+export const SERVER = import.meta.env.VITE_BACKEND || "http://localhost:5000";
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
@@ -29,7 +28,7 @@ export const CheckElegibility = () => {
     }
 
     axios
-      .post(import.meta.env.REACT_APP_SERVER + "/drop/check", {
+      .post(import.meta.env.VITE_BACKEND + "/drop/check", {
         wallet: walletToSend,
       })
       .then((response) => {

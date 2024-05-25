@@ -105,7 +105,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
   ) => {
     setIsLoading(true);
     axios
-      .get(`${import.meta.env.REACT_APP_SERVER}/drop/airdrop/user`, {
+      .get(`${import.meta.env.VITE_BACKEND}/drop/airdrop/user`, {
         params: {
           [Object.keys(field)[0]]: Object.values(field)[0],
         },
@@ -160,7 +160,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
     const toastId = sendEnrollNotification("pending");
     setIsSending(true);
     axios
-      .post(import.meta.env.REACT_APP_SERVER + "/drop/airdrop/add", {
+      .post(import.meta.env.VITE_BACKEND + "/drop/airdrop/add", {
         user: {
           wallet: walletToSend,
           xUsername: xUserToSend,
@@ -318,7 +318,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
             className="min-h-[78px] self-center"
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ref={recaptcha as any}
-            sitekey={(import.meta.env.RECAPTCHA_KEY as string) || "eagagagaga"}
+            sitekey={import.meta.env.VITE_RECAPTCHA_KEY as string}
           />
         </div>
 

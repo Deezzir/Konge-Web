@@ -36,7 +36,7 @@ export const Form = () => {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.REACT_APP_SERVER + "/drop/details")
+      .get(import.meta.env.VITE_BACKEND + "/drop/details")
       .then((response: { data: DropInfo }) => {
         if (!response.data.numberOfMaxAirdropUsers) throw new Error("No data");
         setDropInfo(response.data as DropInfo);
