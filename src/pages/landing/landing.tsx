@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import { Block1 } from "./block1";
 import { Block2 } from "./block2";
@@ -18,7 +18,7 @@ export const Landing = () => {
       setLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
