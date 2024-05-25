@@ -1,14 +1,14 @@
 import Marquee from "react-fast-marquee";
-import { Block1 } from "./blocks/block1";
-import { Block2 } from "./blocks/block2";
-import { Footer } from "./blocks/footer";
-import { Block3 } from "./blocks/block3";
-import { Block4 } from "./blocks/block4";
-import { Block5 } from "./blocks/block5";
-import DIVIDER from "./assets/divider.webp";
+import { Block1 } from "./block1";
+import { Block2 } from "./block2";
+import { Footer } from "../../common/footer";
+import { Block3 } from "./block3";
+import { Block4 } from "./block4";
+import { Block5 } from "./block5";
+import DIVIDER from "../../assets/divider.webp";
 import { Img } from "react-image";
 
-function App() {
+export const Landing = () => {
   return (
     <div className="flex flex-col items-center">
       <Block1 />
@@ -28,6 +28,4 @@ function App() {
       <Footer />
     </div>
   );
-}
-
-export default App;
+};

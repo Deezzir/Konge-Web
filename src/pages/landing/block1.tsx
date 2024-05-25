@@ -1,12 +1,12 @@
-import { Links } from "../common/links";
-import { BUY_LINK } from "../common/urls";
-import TITLE1 from "../assets/block1/title.webp";
-import MONKEY1 from "../assets/block1/main.webp";
-import BUTTON1 from "../assets/block1/button.webp";
-import SWAY1 from "../assets/block1/sway.webp";
+import { Links } from "../../common/links";
+import { BUY_LINK } from "../../common/urls";
+import TITLE1 from "../../assets/block1/title.webp";
+import MONKEY1 from "../../assets/block1/main.webp";
+import BUTTON1 from "../../assets/block1/button.webp";
+import SWAY1 from "../../assets/block1/sway.webp";
 import { useCallback } from "react";
 import { Img } from "react-image";
-import { BlockWrapper } from "../common/block-wrapper";
+import { BlockWrapper } from "../../common/block-wrapper";
 
 export const Block1 = () => {
   const getBlock = useCallback(() => {

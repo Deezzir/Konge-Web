@@ -1,10 +1,10 @@
-import TITLE5 from "../assets/block5/title.webp";
-import MONKEY5 from "../assets/block5/monkey.webp";
-import BANANA5 from "../assets/block5/banana.webp";
+import TITLE5 from "../../assets/block5/title.webp";
+import MONKEY5 from "../../assets/block5/monkey.webp";
+import BANANA5 from "../../assets/block5/banana.webp";
 import { useCallback } from "react";
 import { Img } from "react-image";
-import { BlockWrapper } from "../common/block-wrapper";
-import { MovingImg } from "../common/moving-img";
+import { BlockWrapper } from "../../common/block-wrapper";
+import { MovingImg } from "../../common/moving-img";
 
 export const Block5 = () => {
   const getBlock = useCallback(() => {

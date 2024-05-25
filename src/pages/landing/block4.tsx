@@ -1,9 +1,9 @@
 import { useCallback } from "react";
-import { BlockWrapper } from "../common/block-wrapper";
-import TITLE4 from "../assets/block4/title.webp";
-import MONKEY4 from "../assets/block4/monkey.webp";
-import MONKEY42 from "../assets/block4/monkey2.webp";
-import PIE from "../assets/block4/pie.webp";
+import { BlockWrapper } from "../../common/block-wrapper";
+import TITLE4 from "../../assets/block4/title.webp";
+import MONKEY4 from "../../assets/block4/monkey.webp";
+import MONKEY42 from "../../assets/block4/monkey2.webp";
+import PIE from "../../assets/block4/pie.webp";
 import { Img } from "react-image";
 
 export const Block4 = () => {

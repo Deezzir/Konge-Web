@@ -10,15 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-solflare": "^0.6.28",
+    "@solana/web3.js": "^1.91.8",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.4",
-    "react-image": "^4.1.0"
+    "react-google-recaptcha": "^3.1.0",
+    "react-image": "^4.1.0",
+    "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.5",
+    "react-twitter-widgets": "^1.11.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-google-recaptcha": "^2.1.9",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

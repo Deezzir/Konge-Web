@@ -1,8 +1,8 @@
-import BUTTON2 from "../assets/block2/button.webp";
-import GIF2 from "../assets/block2/gif-placeholder.png";
-import TITLE2 from "../assets/block2/title.webp";
+import BUTTON2 from "../../assets/block2/button.webp";
+import GIF2 from "../../assets/block2/gif-placeholder.png";
+import TITLE2 from "../../assets/block2/title.webp";
 import { Img } from "react-image";
-import { BlockWrapper } from "../common/block-wrapper";
+import { BlockWrapper } from "../../common/block-wrapper";
 import { useCallback } from "react";
 
 export const Block2 = () => {
