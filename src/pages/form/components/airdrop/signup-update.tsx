@@ -314,6 +314,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
           >
             Sign up for Airdrop
           </button>
+
           <ReCAPTCHA
             className="min-h-[78px] self-center"
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
