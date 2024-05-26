@@ -9,11 +9,11 @@ import { Img } from "react-image";
 const Block4 = () => {
   const getBlock = useCallback(() => {
     return (
-      <div className="relative overflow-hidden min-h-screen flex-col gap-[12rem] lg:gap-2 w-full lg:pb-24 flex justify-start lg:justify-between items-center">
+      <div className="relative min-h-screen flex-col lg:gap-2 w-full lg:pb-24 flex justify-start lg:justify-between items-center">
         <Img
           src={TITLE4}
           alt="title"
-          className="h-full w-auto aspect-auto max-h-[10vh] xl:max-h-[15vh] mt-12"
+          className="h-full w-auto aspect-auto max-h-[10vh] xl:max-h-[15vh] mt-12 z-50"
         />
         <div className="w-1/2 lg:w-[40%] absolute bottom-0 left-0 z-50">
           <Img
@@ -29,7 +29,7 @@ const Block4 = () => {
             className="h-auto w-full aspect-auto pl-2 translate-x-[10%]"
           />
         </div>
-        <div className="w-full lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-10 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
+        <div className="w-full my-auto lg:w-[40%] flex flex-col h-full lg:h-[50vh] gap-6 lg:gap-10 px-6 justify-center text-center items-center relative text-3xl md:text-4xl 2xl:text-5xl">
           <div className="w-[98%] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[18%] z-0">
             <Img src={PIE} alt="pie" className="w-full pie" />
           </div>
