@@ -1,6 +1,6 @@
 import CountdownTimer from "./timer/countdown-timer";
 import CircularProgress from "@mui/material/CircularProgress";
-import { DropInfo } from "../../utils";
+import { DropInfo, FormType } from "../../utils";
 
 interface AboutDropProps {
   days: number;
@@ -8,6 +8,7 @@ interface AboutDropProps {
   seconds: number;
   minutes: number;
   isLoading: boolean;
+  formType: FormType;
   dropInfo: DropInfo;
 }
 
@@ -27,20 +28,23 @@ export const AboutDrop = (props: AboutDropProps) => {
           <CircularProgress size={36} />
         )}
       </div>
-      <div className="flex flex-col w-full md:w-[70%] xl:w-[42%] items-center justify-center px-1 py-2 lg:px-8 lg:py-7 border-2 rounded-xl border-[#ebebeb] text-white text-xl md:text-2xl">
+      <div className="flex flex-col w-full md:w-[70%] xl:w-[42%] items-center justify-center px-1 py-2 lg:px-8 lg:py-7 border-2 rounded-xl border-[#ebebeb] text-white text-xl md:text-3xl">
         {!props.isLoading ? (
           <>
-            <h1 className="font-bold text-center">
-              Airdrop enrolls: {props.dropInfo.numberOfAirdropUsers}/
-              {props.dropInfo.numberOfMaxAirdropUsers}
-            </h1>
-            <h1 className="font-bold text-center">
-              Presale enrolls: {props.dropInfo.numberOfPresaleUsers}/
-              {props.dropInfo.numberOfMaxPresaleUsers}
-            </h1>
-            <h1 className="font-bold text-center">
-              Total: {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
-            </h1>
+            {props.formType === FormType.Airdrop ? (
+              <h1 className="font-bold text-center">
+                Enrolls: {props.dropInfo.numberOfAirdropUsers}/
+                {props.dropInfo.numberOfMaxAirdropUsers}
+              </h1>
+            ) : (
+              <>
+                <h1 className="font-bold text-center">
+                  Enrolls: {props.dropInfo.numberOfPresaleUsers}/
+                  {props.dropInfo.numberOfMaxPresaleUsers} &{" "}
+                  {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
+                </h1>
+              </>
+            )}
           </>
         ) : (
           <div className="flex justify-start items-center self-center justify-self-center">

@@ -193,27 +193,51 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
 
   return (
     <div className="flex flex-col gap-2 w-full text-white">
-      <p className="text-3xl font-extrabold text-center">Sign up for airdrop</p>
+      <p
+        className="text-3xl font-extrabold text-center text-[#FFD700]"
+        style={{
+          WebkitTextStrokeColor: "black",
+          WebkitTextStrokeWidth: "2px",
+        }}
+      >
+        Sign up for airdrop
+      </p>
       <form className="">
         <div className="relative">
-          <p className="text-lg">Solana Wallet</p>
+          <p
+            className="text-lg text-[#FFD700]"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "1px",
+            }}
+          >
+            Solana Wallet
+          </p>
           <input
             value={wallet}
             onChange={(event) => setWallet(event.target.value)}
             type="text"
             id="wallet"
-            className="block w-full p-4 pe-[3rem] lg:pe-0 mb-6 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            className="block w-full p-4 pe-[3rem] lg:pe-0 mb-6 text-xs text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />
           <InputStatus
-            style="end-0.5 lg:end-2.2 top-[2.35rem]"
+            style="end-0.5 lg:end-2.2 top-[2.4rem]"
             isValid={isValidWallet}
             isLoading={isLoading1}
           />
         </div>
         <div className="relative">
-          <p className="text-lg">Twitter Username</p>
+          <p
+            className="text-lg text-[#FFD700]"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "1px",
+            }}
+          >
+            Twitter Username
+          </p>
           <span>
             <input
               value={xUser}
@@ -222,7 +246,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
               type="text"
               id="twitter"
               className={
-                "block w-full p-4 pe-[3rem] lg:pe-0 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937] " +
+                "block w-full p-4 pe-[6rem] lg:pe-0 text-xs text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937] " +
                 (!isValidWallet ? "cursor-not-allowed blur-[1px]" : "")
               }
               placeholder="jeet_x_twitter"
@@ -230,21 +254,21 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
             />
             <InputStatus
               style={
-                "end-0.5 lg:end-2.2 top-[2.35rem] " +
+                "end-0.5 lg:end-2.2 top-[2.4rem] " +
                 (!isValidWallet ? "cursor-not-allowed blur-[1px]" : "")
               }
               isValid={isValidXUsername}
               isLoading={isLoading2}
             />
           </span>
-          <p className="mb-4 mt-2 text-slate-400">
-            Acount should be Blue verified |OR| {props.dropInfo.xAge} days old
+          <p className="mb-4 mt-2 text-slate-200">
+            Acount should be Blue verified OR {props.dropInfo.xAge} days old
             with {props.dropInfo.xFollowers} followers. You also must follow{" "}
             <a
               href={`https://twitter.com/${props.dropInfo.toXFollow}`}
               target="_blank"
               rel="noreferrer"
-              className="font-bold text-blue-700"
+              className="font-bold text-blue-300"
             >
               @{props.dropInfo.toXFollow}
             </a>
@@ -252,7 +276,15 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
           </p>
         </div>
         <div className="relative">
-          <p className="text-lg">Twitter Post link</p>
+          <p
+            className="text-lg text-[#FFD700]"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "1px",
+            }}
+          >
+            Twitter Post link
+          </p>
           <div className="w-full flex flex-col lg:flex-row gap-1 lg:gap-2">
             <input
               value={xPost}
@@ -261,7 +293,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
               type="url"
               id="twitter-post"
               className={
-                "block w-full p-4 pe-[3rem] lg:pe-0 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937] " +
+                "block w-full p-4 pe-[3rem] lg:pe-0 text-xs text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937] " +
                 (!isValidXUsername || !isValidWallet
                   ? "cursor-not-allowed blur-[1px]"
                   : "")
@@ -271,7 +303,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
             />
             <InputStatus
               style={
-                "end-0.5 lg:end-[16rem] top-[2.35rem] " +
+                "end-0.5 lg:end-[18.5rem] top-[2.35rem] " +
                 (!isValidXUsername || !isValidWallet
                   ? "cursor-not-allowed blur-[1px]"
                   : "")
@@ -291,7 +323,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
               </a>
             </div>
           </div>
-          <p className="mb-4 mt-2 text-slate-400">
+          <p className="mb-4 mt-2 text-slate-200">
             Your post must include our ticker{" "}
             <span className="font-bold">${props.dropInfo.tokenTicker}</span> and
             a tag to our account @
@@ -323,7 +355,13 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
           />
         </div>
 
-        <p className="text-center mt-24 text-2xl">
+        <p
+          className="text-center mt-24 text-2xl text-[#FFD700]"
+          style={{
+            WebkitTextStrokeColor: "black",
+            WebkitTextStrokeWidth: "2px",
+          }}
+        >
           <span className="font-bold uppercase">
             {props.dropInfo.airdropTokenAmount}% of tokens
           </span>{" "}

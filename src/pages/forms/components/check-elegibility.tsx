@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import {
-  FormattedMessages,
+  FormType,
   sendErrorNotification,
   sendSuccessNotification,
   sendWarningNotification,
@@ -11,7 +11,11 @@ import SearchIcon from "@mui/icons-material/Search";
 // eslint-disable-next-line react-refresh/only-export-components
 export const SERVER = import.meta.env.VITE_BACKEND || "http://localhost:5000";
 
-export const CheckElegibility = () => {
+interface CheckElegibilityProps {
+  formType: FormType;
+}
+
+export const CheckElegibility = (props: CheckElegibilityProps) => {
   const [wallet, setWallet] = useState("");
 
   const onWalletChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,23 +38,28 @@ export const CheckElegibility = () => {
       .then((response) => {
         const {
           isValidWallet,
-          //   isPresaleEnrolled,
+          isPresaleEnrolled,
           isAirdropEnrolled,
-          errorMsgs,
-          //   presaleAmount,
+          presaleAmount,
         } = response.data;
-        if (isValidWallet && isAirdropEnrolled) {
-          const msgs: string[] = [];
-          if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
-          //   if (isPresaleEnrolled)
-          //     msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
-          const formattedMessages = <FormattedMessages messages={msgs} />;
-          sendSuccessNotification(formattedMessages);
+        if (isValidWallet) {
+          if (props.formType === FormType.Airdrop) {
+            if (isAirdropEnrolled) {
+              sendSuccessNotification("Airdrop enrolled");
+            } else {
+              sendWarningNotification("Airdrop not enrolled");
+            }
+          } else if (props.formType === FormType.Presale) {
+            if (isPresaleEnrolled) {
+              sendSuccessNotification(
+                `Presale enrolled with ${presaleAmount.toFixed(2)} SOL`
+              );
+            } else {
+              sendWarningNotification("Presale not enrolled");
+            }
+          }
         } else {
-          const formattedMessages = (
-            <FormattedMessages messages={errorMsgs.slice(0, 1)} />
-          );
-          sendWarningNotification(formattedMessages);
+          sendWarningNotification("Invalid wallet");
         }
       })
       .catch((error) => {
@@ -60,7 +69,13 @@ export const CheckElegibility = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
-      <p className="text-3xl font-bold text-center text-white">
+      <p
+        className="text-3xl font-bold text-center text-[#FFD700]"
+        style={{
+          WebkitTextStrokeColor: "black",
+          WebkitTextStrokeWidth: "2px",
+        }}
+      >
         Check account enrollment
       </p>
       <form onSubmit={onCheck}>
@@ -74,7 +89,15 @@ export const CheckElegibility = () => {
           <div className="absolute inset-y-0 top-[1.8rem] start-0 flex items-center ps-3 pointer-events-none">
             <SearchIcon color="action" />
           </div>
-          <p className="text-lg text-white">Solana Wallet</p>
+          <p
+            className="text-lg text-[#FFD700]"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "1px",
+            }}
+          >
+            Solana Wallet
+          </p>
           <input
             value={wallet}
             onChange={onWalletChange}

@@ -186,16 +186,32 @@ export const PresaleForm = (props: PresaleFormProps) => {
 
   return (
     <div className="flex flex-col gap-2 w-full h-full justify-between text-white">
-      <p className="text-3xl font-bold text-center">Sign up for presale</p>
+      <p
+        className="text-3xl font-bold text-center text-[#FFD700]"
+        style={{
+          WebkitTextStrokeColor: "black",
+          WebkitTextStrokeWidth: "2px",
+        }}
+      >
+        Sign up for presale
+      </p>
       <form className="">
         <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
           <WalletMultiButton />
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-200">
             Your balance: {solBalance.toFixed(2)} SOL
           </p>
         </div>
         <div className="relative">
-          <p className="text-lg">Solana Wallet</p>
+          <p
+            className="text-lg text-[#FFD700]"
+            style={{
+              WebkitTextStrokeColor: "black",
+              WebkitTextStrokeWidth: "1px",
+            }}
+          >
+            Solana Wallet
+          </p>
           <input
             disabled={isLoading}
             value={solAmount}
@@ -209,7 +225,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
             placeholder={props.dropInfo.presaleMinSolAmount.toString()}
             required
           />
-          <p className="mb-4 mt-2 text-slate-400">
+          <p className="mb-4 mt-2 text-slate-200">
             Min: {props.dropInfo.presaleMinSolAmount}, Max:{" "}
             {props.dropInfo.presaleMaxSolAmount} SOL
           </p>
@@ -229,7 +245,13 @@ export const PresaleForm = (props: PresaleFormProps) => {
             Buy Presale
           </button>
         </div>
-        <p className="text-center mt-24 text-2xl">
+        <p
+          className="text-center mt-24 text-2xl text-[#FFD700]"
+          style={{
+            WebkitTextStrokeColor: "black",
+            WebkitTextStrokeWidth: "2px",
+          }}
+        >
           <span className="font-bold uppercase">
             {props.dropInfo.presaleTokenAmount}% of tokens
           </span>{" "}

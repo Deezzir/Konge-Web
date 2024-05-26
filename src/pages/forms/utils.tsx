@@ -1,8 +1,16 @@
 import { Bounce, toast } from "react-toastify";
 import CircularProgress from "@mui/material/CircularProgress";
-import { PublicKey } from "@solana/web3.js";
+import {
+  PublicKey,
+  RpcResponseAndContext,
+  Signer,
+  TransactionInstruction,
+  TransactionMessage,
+  VersionedTransaction,
+} from "@solana/web3.js";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
+import { RPC_CONNECTION } from "../../common/urls";
 
 export const FormattedMessages = ({ messages }: { messages: string[] }) => (
   <div>
@@ -55,6 +63,12 @@ export const sanitizeXPostLink = (link: string) => {
   const url = new URL(link.replace(/\s/g, ""));
   return url.origin + url.pathname;
 };
+
+// eslint-disable-next-line react-refresh/only-export-components
+export enum FormType {
+  Presale = "presale",
+  Airdrop = "airdrop",
+}
 
 export interface DropInfo {
   numberOfMaxAirdropUsers: number;
@@ -244,4 +258,63 @@ export function InputStatus({
       ) : null}
     </>
   );
+}
+
+async function isBlockhashExpired(lastValidBlockHeight: number) {
+  const currentBlockHeight = await RPC_CONNECTION.getBlockHeight("finalized");
+  return currentBlockHeight > lastValidBlockHeight - 150;
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export async function create_and_send_tx(
+  instructions: TransactionInstruction[],
+  payer: Signer,
+  signers: Signer[],
+  context: RpcResponseAndContext<
+    Readonly<{ blockhash: string; lastValidBlockHeight: number }>
+  >
+): Promise<string> {
+  const versioned_tx = new VersionedTransaction(
+    new TransactionMessage({
+      payerKey: payer.publicKey,
+      recentBlockhash: context.value.blockhash,
+      instructions: instructions.filter(Boolean),
+    }).compileToV0Message()
+  );
+
+  versioned_tx.sign(signers);
+
+  const signature = await RPC_CONNECTION.sendTransaction(versioned_tx);
+
+  let hashExpired = false;
+  let txSuccess = false;
+  while (!hashExpired && !txSuccess) {
+    const { value: status } = await RPC_CONNECTION.getSignatureStatus(
+      signature
+    );
+
+    if (
+      status &&
+      (status.confirmationStatus === "confirmed" ||
+        status.confirmationStatus === "finalized") &&
+      status.err === null
+    ) {
+      txSuccess = true;
+      break;
+    }
+
+    if (status && status.err) {
+      throw new Error(`Transaction failed`);
+    }
+
+    hashExpired = await isBlockhashExpired(context.value.lastValidBlockHeight);
+
+    if (hashExpired) {
+      throw new Error("Blockhash has expired.");
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
+  return signature;
 }
