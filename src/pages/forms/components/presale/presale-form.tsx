@@ -196,9 +196,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
       </p>
       <form className="">
         <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
-          <WalletMultiButton
-            className={props.disabled ? "select-none pointer-events-none" : ""}
-          />
+          <WalletMultiButton disabled={props.disabled} />
           <p className="text-xs text-slate-200">
             Your balance: {solBalance.toFixed(2)} SOL
           </p>
