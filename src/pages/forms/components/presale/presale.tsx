@@ -8,10 +8,11 @@ import {
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { SolflareWalletAdapter } from "@solana/wallet-adapter-solflare";
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { DropInfo } from "../../utils";
+import { PresaleInfo } from "../../utils";
 
 interface PresaleProps {
-  dropInfo: DropInfo;
+  dropInfo: PresaleInfo;
+  disabled: boolean;
 }
 
 export const Presale: FC<PresaleProps> = (props: PresaleProps) => {
@@ -25,7 +26,7 @@ export const Presale: FC<PresaleProps> = (props: PresaleProps) => {
       >
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            <PresaleForm dropInfo={props.dropInfo} />
+            <PresaleForm dropInfo={props.dropInfo} disabled={props.disabled} />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

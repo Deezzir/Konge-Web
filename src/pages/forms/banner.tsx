@@ -4,11 +4,11 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import type { DialogProps } from "@mui/material";
-import { DropInfo, FormType } from "./utils";
+import { PresaleInfo, AirdropInfo, FormType } from "./utils";
 
 interface BannerProps {
   formType: FormType;
-  dropInfo: DropInfo;
+  dropInfo: PresaleInfo | AirdropInfo;
   close: (show: boolean) => void;
 }
 
@@ -82,22 +82,23 @@ export const Banner = (props: BannerProps) => {
                     </p>
                   </div>
                   <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-2xl text-white">
-                    <p className="text-white">1) ENTER YOUR SOL ADRESS</p>
+                    <p className="text-white">1) ENTER YOUR SOL WALLET</p>
                     <p className="text-white">2) ENTER YOUR TWITTER @</p>
                     <p className="text-white">
-                      3) FOLLOW {props.dropInfo.toXFollow}
+                      3) FOLLOW {(props.dropInfo as AirdropInfo).toXFollow}
                     </p>
                     <p className="mb-6 text-white">
                       4) MAKE A POST USING ${props.dropInfo.tokenTicker}, @
-                      {props.dropInfo.toXFollow} AND A PICTURE
+                      {(props.dropInfo as AirdropInfo).toXFollow} AND A PICTURE
                     </p>
                     <p className="text-white">
                       Example: I am wif ${props.dropInfo.tokenTicker} @
-                      {props.dropInfo.toXFollow}
+                      {(props.dropInfo as AirdropInfo).toXFollow}
                     </p>
                     <p className="text-white">
-                      Twitter account should be {props.dropInfo.xAge}+ days old
-                      and {props.dropInfo.xFollowers}+ followers
+                      Twitter account should be{" "}
+                      {(props.dropInfo as AirdropInfo).xAge}+ days old and{" "}
+                      {(props.dropInfo as AirdropInfo).xFollowers}+ followers
                     </p>
                   </div>
                 </>
@@ -112,8 +113,8 @@ export const Banner = (props: BannerProps) => {
                     <p className="text-white">1) CONNECT YOUR WALLET</p>
                     <p className="text-white">
                       2) ENTER THE AMOUNT OF SOL (
-                      {props.dropInfo.presaleMinSolAmount} MIN,{" "}
-                      {props.dropInfo.presaleMaxSolAmount} MAX)
+                      {(props.dropInfo as PresaleInfo).presaleMinSolAmount} MIN,{" "}
+                      {(props.dropInfo as PresaleInfo).presaleMaxSolAmount} MAX)
                     </p>
                     <p className="text-white mb-6">
                       3) CLICK BUY AND FOLLOW STEPS IN THE WALLET

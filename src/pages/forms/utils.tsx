@@ -70,23 +70,28 @@ export enum FormType {
   Airdrop = "airdrop",
 }
 
-export interface DropInfo {
+export interface AirdropInfo {
   numberOfMaxAirdropUsers: number;
-  numberOfMaxPresaleUsers: number;
   numberOfAirdropUsers: number;
-  numberOfPresaleUsers: number;
   deadline: number;
   toXFollow: string;
-  toTGFollow: string;
-  presaleMaxSolAmount: number;
-  presaleMinSolAmount: number;
-  presaleSolAmount: number;
-  presaleTokenAmount: number;
   airdropTokenAmount: number;
   tokenTicker: string;
   dropPublicKey: string;
   xFollowers: number;
   xAge: number;
+}
+
+export interface PresaleInfo {
+  numberOfMaxPresaleUsers: number;
+  numberOfPresaleUsers: number;
+  deadline: number;
+  presaleMaxSolAmount: number;
+  presaleMinSolAmount: number;
+  presaleSolAmount: number;
+  presaleTokenAmount: number;
+  tokenTicker: string;
+  dropPublicKey: string;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

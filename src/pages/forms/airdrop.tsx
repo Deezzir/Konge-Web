@@ -4,25 +4,18 @@ import { CheckElegibility } from "./components/check-elegibility";
 import { SignUpUpdate } from "./components/airdrop/signup-update";
 import { useCountdown } from "../../hooks/useCountdown";
 import axios from "axios";
-import { sendErrorNotification, DropInfo, FormType } from "./utils";
+import { sendErrorNotification, FormType, AirdropInfo } from "./utils";
 import { BlockWrapper } from "../../common/block-wrapper";
 import { Banner } from "./banner";
 import { Footer } from "../../common/footer";
 
 const AirdropForm = () => {
   const [, setShowBanner] = useState(false);
-  const [dropInfo, setDropInfo] = useState<DropInfo>({
+  const [dropInfo, setDropInfo] = useState<AirdropInfo>({
     numberOfMaxAirdropUsers: 75,
-    numberOfMaxPresaleUsers: 500,
     numberOfAirdropUsers: 0,
-    numberOfPresaleUsers: 0,
     deadline: 0,
     toXFollow: "letto_dev",
-    toTGFollow: "letto_dev",
-    presaleMaxSolAmount: 5.0,
-    presaleMinSolAmount: 0.1,
-    presaleSolAmount: 0,
-    presaleTokenAmount: 10,
     airdropTokenAmount: 10,
     tokenTicker: "SOL",
     dropPublicKey: "",
@@ -35,10 +28,10 @@ const AirdropForm = () => {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_BACKEND + "/drop/details")
-      .then((response: { data: DropInfo }) => {
+      .get(import.meta.env.VITE_BACKEND + "/drop/airdrop")
+      .then((response: { data: AirdropInfo }) => {
         if (!response.data.numberOfMaxAirdropUsers) throw new Error("No data");
-        setDropInfo(response.data as DropInfo);
+        setDropInfo(response.data as AirdropInfo);
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);

@@ -17,10 +17,10 @@ import {
 import { ExampleModal } from "./example-modal";
 import DownloadIcon from "@mui/icons-material/Download";
 import { toast } from "react-toastify";
-import { DropInfo } from "../../utils";
+import { AirdropInfo } from "../../utils";
 
 interface SignUpUpdateProps {
-  dropInfo: DropInfo;
+  dropInfo: AirdropInfo;
 }
 
 export const SignUpUpdate = (props: SignUpUpdateProps) => {

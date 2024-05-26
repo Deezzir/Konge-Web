@@ -16,10 +16,11 @@ import {
 import { WalletSendTransactionError } from "@solana/wallet-adapter-base";
 import { Id, toast } from "react-toastify";
 import axios from "axios";
-import { DropInfo } from "../../utils";
+import { PresaleInfo } from "../../utils";
 
 interface PresaleFormProps {
-  dropInfo: DropInfo;
+  dropInfo: PresaleInfo;
+  disabled: boolean;
 }
 
 export const PresaleForm = (props: PresaleFormProps) => {
@@ -118,8 +119,6 @@ export const PresaleForm = (props: PresaleFormProps) => {
         "processed"
       );
 
-      console.log(import.meta.env.VITE_BACKEND + "/drop/presale/add");
-
       axios
         .post(import.meta.env.VITE_BACKEND + "/drop/presale/add", {
           user: {
@@ -197,7 +196,9 @@ export const PresaleForm = (props: PresaleFormProps) => {
       </p>
       <form className="">
         <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
-          <WalletMultiButton />
+          <WalletMultiButton
+            className={props.disabled ? "select-none pointer-events-none" : ""}
+          />
           <p className="text-xs text-slate-200">
             Your balance: {solBalance.toFixed(2)} SOL
           </p>
@@ -255,8 +256,9 @@ export const PresaleForm = (props: PresaleFormProps) => {
           <span className="font-bold uppercase">
             {props.dropInfo.presaleTokenAmount}% of tokens
           </span>{" "}
-          from the Dev Buy will be will be distributed among people depending on
-          the amount of SOL sent.
+          from the Dev Buy will be distributed among{" "}
+          {props.dropInfo.numberOfMaxPresaleUsers} people depending on the total
+          amount of SOL received.
         </p>
       </form>
     </div>

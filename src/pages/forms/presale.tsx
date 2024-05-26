@@ -3,7 +3,7 @@ import { AboutDrop } from "./components/about-drop/about-drop";
 import { CheckElegibility } from "./components/check-elegibility";
 import { useCountdown } from "../../hooks/useCountdown";
 import axios from "axios";
-import { sendErrorNotification, DropInfo, FormType } from "./utils";
+import { sendErrorNotification, PresaleInfo, FormType } from "./utils";
 import { Presale } from "./components/presale/presale";
 import { BlockWrapper } from "../../common/block-wrapper";
 import { Banner } from "./banner";
@@ -11,23 +11,16 @@ import { Footer } from "../../common/footer";
 
 export const PresaleForm = () => {
   const [, setShowBanner] = useState(false);
-  const [dropInfo, setDropInfo] = useState<DropInfo>({
-    numberOfMaxAirdropUsers: 75,
+  const [dropInfo, setDropInfo] = useState<PresaleInfo>({
     numberOfMaxPresaleUsers: 500,
-    numberOfAirdropUsers: 0,
     numberOfPresaleUsers: 0,
     deadline: 0,
-    toXFollow: "letto_dev",
-    toTGFollow: "letto_dev",
     presaleMaxSolAmount: 5.0,
     presaleMinSolAmount: 0.1,
     presaleSolAmount: 0,
     presaleTokenAmount: 10,
-    airdropTokenAmount: 10,
     tokenTicker: "SOL",
     dropPublicKey: "",
-    xFollowers: 30,
-    xAge: 30,
   });
 
   const [days, hours, minutes, seconds] = useCountdown(dropInfo.deadline);
@@ -35,10 +28,10 @@ export const PresaleForm = () => {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_BACKEND + "/drop/details")
-      .then((response: { data: DropInfo }) => {
-        if (!response.data.numberOfMaxAirdropUsers) throw new Error("No data");
-        setDropInfo(response.data as DropInfo);
+      .get(import.meta.env.VITE_BACKEND + "/drop/presale")
+      .then((response: { data: PresaleInfo }) => {
+        if (!response.data.numberOfMaxPresaleUsers) throw new Error("No data");
+        setDropInfo(response.data as PresaleInfo);
         setTimeout(() => {
           setIsLoading(false);
         }, 1500);
@@ -100,7 +93,10 @@ export const PresaleForm = () => {
                   : "")
               }
             >
-              <Presale dropInfo={dropInfo} />
+              <Presale
+                dropInfo={dropInfo}
+                disabled={blured || blurredPresale || isLoading}
+              />
             </div>
           </div>
         </div>
