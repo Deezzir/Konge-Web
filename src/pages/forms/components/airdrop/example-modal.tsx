@@ -73,7 +73,7 @@ export const ExampleModal = () => {
             </Box>
             <h2 className="text-3xl font-bold text-center">Example</h2>
             <div className="w-full light updated-dark">
-              <Tweet tweetId={"1791234180195418453"} />
+              <Tweet tweetId={"1795163521480618214"} />
             </div>
             <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text
