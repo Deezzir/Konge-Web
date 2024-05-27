@@ -14,6 +14,7 @@ export const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Landing />} />
+
       <Route path="/airdrop" element={<AirdropForm />} />
       <Route path="/presale" element={<PresaleForm />} />
       <Route path="*" element={<NotFound />} />
