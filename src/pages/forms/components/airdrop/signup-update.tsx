@@ -262,8 +262,8 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
             />
           </span>
           <p className="mb-4 mt-2 text-slate-200">
-            Acount should be Blue verified OR {props.dropInfo.xAge} days old
-            with {props.dropInfo.xFollowers} followers. You also must follow{" "}
+            Acount should be Blue verified OR {props.dropInfo.xAge}+ days old
+            with {props.dropInfo.xFollowers}+ followers. You also must follow{" "}
             <a
               href={`https://twitter.com/${props.dropInfo.toXFollow}`}
               target="_blank"
