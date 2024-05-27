@@ -51,7 +51,7 @@ export const Block5 = () => {
                 WebkitTextStrokeWidth: "4px",
               }}
             >
-              • Sign-Up 24H before launch
+              • Sign-Up 48H before launch
             </p>
             <p
               className="text-[#FFD700] z-50"
