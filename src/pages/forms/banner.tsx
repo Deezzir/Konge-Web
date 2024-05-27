@@ -31,7 +31,7 @@ export const Banner = (props: BannerProps) => {
     p: 2,
   };
 
-  const [timeLeft, setTimeLeft] = useState<number>(3);
+  const [timeLeft, setTimeLeft] = useState<number>(5);
   const [open, setOpen] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
