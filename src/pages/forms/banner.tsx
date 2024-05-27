@@ -91,10 +91,10 @@ export const Banner = (props: BannerProps) => {
                       4) MAKE A POST USING ${props.dropInfo.tokenTicker}, @
                       {(props.dropInfo as AirdropInfo).toXFollow} AND A PICTURE
                     </p>
-                    <p className="text-white">
+                    {/* <p className="text-white">
                       Example: I am wif ${props.dropInfo.tokenTicker} @
                       {(props.dropInfo as AirdropInfo).toXFollow}
-                    </p>
+                    </p> */}
                     <p className="text-white">
                       Twitter account should be{" "}
                       {(props.dropInfo as AirdropInfo).xAge}+ days old and{" "}

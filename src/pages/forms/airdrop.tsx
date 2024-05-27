@@ -55,9 +55,18 @@ const AirdropForm = () => {
         formType={FormType.Airdrop}
       />
       <div
-        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-[#333333]"
+        className="flex flex-col gap-1 pb-12 pt-4 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-[#333333]"
         style={{ wordSpacing: "5px" }}
       >
+        <h1
+          className="text-4xl md:text-6xl text-[#FFD700] text-center tracking-wider"
+          style={{
+            WebkitTextStrokeColor: "black",
+            WebkitTextStrokeWidth: "3px",
+          }}
+        >
+          {dropInfo.tokenTicker} Airdrop
+        </h1>
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}

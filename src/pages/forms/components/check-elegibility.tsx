@@ -70,7 +70,7 @@ export const CheckElegibility = (props: CheckElegibilityProps) => {
   return (
     <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
       <p
-        className="text-3xl font-bold text-center text-[#FFD700]"
+        className="text-3xl font-bold text-center text-[#FFD700] tracking-wider"
         style={{
           WebkitTextStrokeColor: "black",
           WebkitTextStrokeWidth: "2px",

@@ -194,7 +194,7 @@ export const SignUpUpdate = (props: SignUpUpdateProps) => {
   return (
     <div className="flex flex-col gap-2 w-full text-white">
       <p
-        className="text-3xl font-extrabold text-center text-[#FFD700]"
+        className="text-3xl font-extrabold text-center text-[#FFD700] tracking-wider"
         style={{
           WebkitTextStrokeColor: "black",
           WebkitTextStrokeWidth: "2px",
