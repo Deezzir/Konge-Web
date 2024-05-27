@@ -95,7 +95,7 @@ export const Banner = (props: BannerProps) => {
                       Example: I am wif ${props.dropInfo.tokenTicker} @
                       {(props.dropInfo as AirdropInfo).toXFollow}
                     </p> */}
-                    <p className="text-white">
+                    <p className="text-white mb-4">
                       Twitter account should be{" "}
                       {(props.dropInfo as AirdropInfo).xAge}+ days old and{" "}
                       {(props.dropInfo as AirdropInfo).xFollowers}+ followers
@@ -119,7 +119,7 @@ export const Banner = (props: BannerProps) => {
                     <p className="text-white mb-6">
                       3) CLICK BUY AND FOLLOW STEPS IN THE WALLET
                     </p>
-                    <p className="text-white">
+                    <p className="text-white mb-4">
                       Presale SOL will be used for DEV BUY BURN
                     </p>
                   </div>
