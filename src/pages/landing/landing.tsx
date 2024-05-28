@@ -53,11 +53,11 @@ export const Landing = () => {
         </div>
       </Marquee>
       <Block2 />
-      <Img src={DIVIDER} className="h-1/2" />
+      <Img src={DIVIDER} className="h-1/2 w-[100vw]" />
       <Block3 />
-      <Img src={DIVIDER} className="h-1/2" />
+      <Img src={DIVIDER} className="h-1/2 w-[100vw]" />
       <Block4 />
-      <Img src={DIVIDER} className="h-1/2" />
+      <Img src={DIVIDER} className="h-1/2 w-[100vw]" />
       <Block5 />
       <Footer />
     </div>
