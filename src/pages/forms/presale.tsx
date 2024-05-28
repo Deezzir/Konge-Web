@@ -19,7 +19,7 @@ export const PresaleForm = () => {
     presaleMinSolAmount: 0.1,
     presaleSolAmount: 0,
     presaleTokenAmount: 10,
-    tokenTicker: "SOL",
+    tokenTicker: "KONGE",
     dropPublicKey: "",
   });
 
