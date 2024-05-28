@@ -119,55 +119,60 @@ export const PresaleForm = (props: PresaleFormProps) => {
         "processed"
       );
 
-      axios
-        .post(import.meta.env.VITE_BACKEND + "/drop/presale/add", {
-          user: {
-            wallet: publicKey,
-            solAmount: solAmount,
-            txEnroll: signature,
-          },
-        })
-        .then((response) => {
-          if (response.data.isCreated) {
-            toast.update(toastId, {
-              render: (
-                <TransactionToast
-                  status="confirmed"
-                  signature={signature}
-                  text="You've enrolled"
-                />
-              ),
-              autoClose: 7000,
-              closeOnClick: true,
-              draggable: true,
-            });
-          } else if (response.data.isUpdated) {
-            toast.update(toastId, {
-              render: (
-                <TransactionToast
-                  status="confirmed"
-                  signature={signature}
-                  text="Record updated"
-                />
-              ),
-              autoClose: 7000,
-              closeOnClick: true,
-              draggable: true,
-            });
-          }
-          clearForm();
-        })
-        .catch((error) => {
-          toast.dismiss(toastId);
-          if (error.response.data.errorMsg) {
-            sendWarningNotification(error.response.data.errorMsg);
-            return;
-          }
-          sendErrorNotification("Unhandled error happened. Let dev know!");
-        })
-        .finally(() => {
-          setIsSending(false);
-        });
+      let attempts = 5;
+
+      while (attempts > 0) {
+        axios
+          .post(import.meta.env.VITE_BACKEND + "/drop/presale/add", {
+            user: {
+              wallet: publicKey,
+              solAmount: solAmount,
+              txEnroll: signature,
+            },
+          })
+          .then((response) => {
+            if (response.data.isCreated) {
+              toast.update(toastId, {
+                render: (
+                  <TransactionToast
+                    status="confirmed"
+                    signature={signature}
+                    text="You've enrolled"
+                  />
+                ),
+                autoClose: 7000,
+                closeOnClick: true,
+                draggable: true,
+              });
+            } else if (response.data.isUpdated) {
+              toast.update(toastId, {
+                render: (
+                  <TransactionToast
+                    status="confirmed"
+                    signature={signature}
+                    text="Record updated"
+                  />
+                ),
+                autoClose: 7000,
+                closeOnClick: true,
+                draggable: true,
+              });
+            }
+            clearForm();
+            attempts = 0;
+          })
+          .catch((error) => {
+            if (error.response.data.errorMsg) {
+              toast.dismiss(toastId);
+              sendWarningNotification(error.response.data.errorMsg);
+              attempts = 0;
+              return;
+            }
+            sendErrorNotification("Error happened. Retrying...");
+            attempts--;
+          });
+      }
+      setIsSending(false);
     } catch (error) {
       if (
         error instanceof WalletSendTransactionError &&
