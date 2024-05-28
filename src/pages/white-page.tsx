@@ -106,7 +106,6 @@ export const WhitePage = () => {
               liquidity, which will be also distributed among presale
               participants.
             </p>
-
             <h2 className="text-lg font-semibold mt-4">
               4. 3% Team Allocation
             </h2>
