@@ -65,12 +65,12 @@ export const WhitePaper = () => {
 
             <h2 className="text-lg font-semibold mt-4">2. 7% Airdrop</h2>
             <p>
-              Currently, 560 people have registered for the airdrop. Some may
-              unsubscribe or delete posts, and all bots will be removed from the
-              airdrop list. This will be verified both manually and by scripts
-              to ensure no real people are removed. The 7% will be evenly
-              distributed among the remaining 500-560 people. The number of
-              tokens will be calculated using the formula:
+              Currently, 560 people have registered for the airdrop. Some who
+              may unsubscribe or delete posts will be removed along with all the
+              bots from the airdrop list. Verification will be performed
+              manually and by scripts to ensure no actual people are removed.
+              The 7% will be evenly distributed among the remaining 500-560
+              people. The number of tokens will be calculated using the formula:
             </p>
             <br />
             <p className="italic">

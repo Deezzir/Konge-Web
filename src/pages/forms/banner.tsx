@@ -114,8 +114,7 @@ export const Banner = (props: BannerProps) => {
                     <p className="text-white">1) CONNECT YOUR WALLET</p>
                     <p className="text-white">
                       2) ENTER THE AMOUNT OF SOL (
-                      {(props.dropInfo as PresaleInfo).presaleMinSolAmount} MIN,{" "}
-                      {(props.dropInfo as PresaleInfo).presaleMaxSolAmount} MAX)
+                      {(props.dropInfo as PresaleInfo).presaleMaxSolAmount} SOL)
                     </p>
                     <p className="text-white mb-6">
                       3) CLICK BUY AND FOLLOW STEPS IN THE WALLET

@@ -35,7 +35,7 @@ axiosRetry(axios, {
 });
 
 export const PresaleForm = (props: PresaleFormProps) => {
-  const [solAmount, setSolAmount] = useState<number>(0.1);
+  const [solAmount, setSolAmount] = useState<number>(2.0);
   const [solBalance, setSolBalance] = useState(0.0);
   const [isLoading, setIsLoading] = useState(true);
   const [isSending, setIsSending] = useState(false);
@@ -82,6 +82,8 @@ export const PresaleForm = (props: PresaleFormProps) => {
 
   const onSolAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSolAmount(Number(e.target.value));
+    console.log(isLoading);
+    console.log(isSending);
   };
 
   const onPresale = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -91,6 +93,13 @@ export const PresaleForm = (props: PresaleFormProps) => {
 
     if (!publicKey) {
       sendErrorNotification("Please, connect the wallet first");
+      setIsSending(false);
+      return;
+    }
+
+    if (solBalance < solAmount) {
+      sendErrorNotification("Not enough SOL in your wallet");
+      setIsSending(false);
       return;
     }
 
@@ -99,11 +108,13 @@ export const PresaleForm = (props: PresaleFormProps) => {
       solAmount > props.dropInfo.presaleMaxSolAmount
     ) {
       sendErrorNotification("Wrong amount of SOL");
+      setIsSending(false);
       return;
     }
 
     if (solAmount + solEnrolled > props.dropInfo.presaleMaxSolAmount) {
       sendErrorNotification("You can't enroll more than max amount");
+      setIsSending(false);
       return;
     }
 
@@ -225,7 +236,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
           </p>
           <input
             disabled={isLoading}
-            value={solAmount}
+            value={solAmount.toFixed(1)}
             onChange={onSolAmountChange}
             type="number"
             id="sol-amount"
