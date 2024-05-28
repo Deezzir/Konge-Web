@@ -12,7 +12,7 @@ import { Footer } from "../../common/footer";
 const AirdropForm = () => {
   const [, setShowBanner] = useState(false);
   const [dropInfo, setDropInfo] = useState<AirdropInfo>({
-    numberOfMaxAirdropUsers: 75,
+    numberOfMaxAirdropUsers: 777,
     numberOfAirdropUsers: 0,
     deadline: 0,
     toXFollow: "kongekinge",

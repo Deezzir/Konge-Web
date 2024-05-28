@@ -12,7 +12,7 @@ import { Footer } from "../../common/footer";
 export const PresaleForm = () => {
   const [, setShowBanner] = useState(false);
   const [dropInfo, setDropInfo] = useState<PresaleInfo>({
-    numberOfMaxPresaleUsers: 500,
+    numberOfMaxPresaleUsers: 100,
     numberOfPresaleUsers: 0,
     deadline: 0,
     presaleMaxSolAmount: 5.0,
