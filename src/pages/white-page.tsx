@@ -99,7 +99,6 @@ export const WhitePage = () => {
               (1,000,000,000 - burned coins) * 0.07 / 100
             </p>
             <br />
-
             <p>
               When purchasing and burning the coin for 200 SOL, we transfer
               funds from the presale to the coin’s liquidity. When burning a
