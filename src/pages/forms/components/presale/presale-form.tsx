@@ -17,11 +17,22 @@ import { WalletSendTransactionError } from "@solana/wallet-adapter-base";
 import { Id, toast } from "react-toastify";
 import axios from "axios";
 import { PresaleInfo } from "../../utils";
+import axiosRetry from "axios-retry";
 
 interface PresaleFormProps {
   dropInfo: PresaleInfo;
   disabled: boolean;
 }
+
+axiosRetry(axios, {
+  retries: 5,
+  retryCondition: (error) => {
+    return !error.response || error.response.status >= 500;
+  },
+  retryDelay: (retryCount: number) => {
+    return retryCount * 100;
+  },
+});
 
 export const PresaleForm = (props: PresaleFormProps) => {
   const [solAmount, setSolAmount] = useState<number>(0.1);
@@ -119,60 +130,57 @@ export const PresaleForm = (props: PresaleFormProps) => {
         "processed"
       );
 
-      let attempts = 5;
-
-      while (attempts > 0) {
-        axios
-          .post(import.meta.env.VITE_BACKEND + "/drop/presale/add", {
+      try {
+        const response = await axios.post(
+          import.meta.env.VITE_BACKEND + "/drop/presale/add",
+          {
             user: {
               wallet: publicKey,
               solAmount: solAmount,
               txEnroll: signature,
             },
-          })
-          .then((response) => {
-            if (response.data.isCreated) {
-              toast.update(toastId, {
-                render: (
-                  <TransactionToast
-                    status="confirmed"
-                    signature={signature}
-                    text="You've enrolled"
-                  />
-                ),
-                autoClose: 7000,
-                closeOnClick: true,
-                draggable: true,
-              });
-            } else if (response.data.isUpdated) {
-              toast.update(toastId, {
-                render: (
-                  <TransactionToast
-                    status="confirmed"
-                    signature={signature}
-                    text="Record updated"
-                  />
-                ),
-                autoClose: 7000,
-                closeOnClick: true,
-                draggable: true,
-              });
-            }
-            clearForm();
-            attempts = 0;
-          })
-          .catch((error) => {
-            if (error.response.data.errorMsg) {
-              toast.dismiss(toastId);
-              sendWarningNotification(error.response.data.errorMsg);
-              attempts = 0;
-              return;
-            }
-            sendErrorNotification("Error happened. Retrying...");
-            attempts--;
+          }
+        );
+
+        if (response.data.isCreated) {
+          toast.update(toastId, {
+            render: (
+              <TransactionToast
+                status="confirmed"
+                signature={signature}
+                text="You've enrolled"
+              />
+            ),
+            autoClose: 7000,
+            closeOnClick: true,
+            draggable: true,
           });
+        } else if (response.data.isUpdated) {
+          toast.update(toastId, {
+            render: (
+              <TransactionToast
+                status="confirmed"
+                signature={signature}
+                text="Record updated"
+              />
+            ),
+            autoClose: 7000,
+            closeOnClick: true,
+            draggable: true,
+          });
+        }
+        clearForm();
+      } catch (error) {
+        const err = error as { response?: { data?: { errorMsg?: string } } };
+        if (err.response && err.response.data && err.response.data.errorMsg) {
+          toast.dismiss(toastId);
+          sendWarningNotification(err.response.data.errorMsg);
+        } else {
+          sendErrorNotification("Max retries reached. Contact dev please.");
+        }
+      } finally {
+        setIsSending(false);
       }
-      setIsSending(false);
     } catch (error) {
       if (
         error instanceof WalletSendTransactionError &&
@@ -181,8 +189,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
         sendWarningNotification("Transaction was rejected by the user.");
       } else {
         toast.dismiss(toastId);
-        console.error(error);
-        sendErrorNotification("Unhandled error happened. Let dev know!.");
+        sendErrorNotification("Transaction failed. Please try again later.");
       }
       setIsSending(false);
     }
