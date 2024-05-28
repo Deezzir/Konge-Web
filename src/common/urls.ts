@@ -11,5 +11,5 @@ export const DEXSCREENER = "";
 export const RAYDIUM = "";
 export const JUPITER = "";
 
-export const RPC_ENDPOINT = "https://api.mainnet-beta.solana.com";
+export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT as string;
 export const RPC_CONNECTION = new Connection(RPC_ENDPOINT, "confirmed");
