@@ -55,7 +55,7 @@ export const PresaleForm = () => {
         formType={FormType.Presale}
       />
       <div
-        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-[#333333]"
+        className="flex flex-col gap-1 pb-12 pt-4 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-[#333333]"
         style={{ wordSpacing: "5px" }}
       >
         <h1
