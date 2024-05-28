@@ -51,6 +51,7 @@ export const Banner = (props: BannerProps) => {
 
   const handleClose: DialogProps["onClose"] = (_event, reason) => {
     if (reason && reason === "backdropClick") return;
+
     if (!isButtonEnabled) return;
     setOpen(false);
   };
