@@ -120,7 +120,7 @@ export const Banner = (props: BannerProps) => {
                       3) CLICK BUY AND FOLLOW STEPS IN THE WALLET
                     </p>
                     <p className="text-white mb-4">
-                      Presale SOL will be used for DEV BUY BURN
+                      Presale SOL will be used for RAYDIUM BUY BURN
                     </p>
                   </div>
                 </>
