@@ -209,7 +209,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
               WebkitTextStrokeWidth: "1px",
             }}
           >
-            Solana Wallet
+            SOL Amount
           </p>
           <input
             disabled={isLoading}
