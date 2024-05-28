@@ -138,7 +138,7 @@ export const PresaleForm = (props: PresaleFormProps) => {
           lastValidBlockHeight,
           signature,
         },
-        "processed"
+        "confirmed"
       );
 
       try {
