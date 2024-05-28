@@ -9,6 +9,7 @@ import { Landing } from "./pages/landing/landing";
 import AirdropForm from "./pages/forms/airdrop";
 import PresaleForm from "./pages/forms/presale";
 import { NotFound } from "./pages/not-found";
+import { WhitePage } from "./pages/white-page";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ export const Router = createBrowserRouter(
 
       <Route path="/airdrop" element={<AirdropForm />} />
       <Route path="/presale" element={<PresaleForm />} />
+      <Route path="/whitepage" element={<WhitePage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

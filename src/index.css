@@ -66,4 +66,17 @@
       transform: rotate(15deg);
     }
   }
+
+  .whitepage {
+    font-family: "Inter", sans-serif !important;
+  }
+
+  .whitepage * {
+    font-family: "Inter", sans-serif !important;
+    user-select: text;
+  }
+
+  .content {
+    white-space: pre-line;
+  }
 }
