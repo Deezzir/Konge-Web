@@ -2,7 +2,7 @@ import { Footer } from "../common/footer";
 import JEETS from "../assets/jeets.webp";
 import { Img } from "react-image";
 
-export const WhitePage = () => {
+export const WhitePaper = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-white text-[#000113] whitepage relative">
