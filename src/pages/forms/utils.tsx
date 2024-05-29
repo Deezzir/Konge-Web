@@ -209,7 +209,6 @@ export function TransactionToast({
   text: string | undefined;
 }) {
   const getTxUrl = () => `https://solscan.io/tx/${signature}`;
-
   return (
     <div>
       {status === "pending" && (
