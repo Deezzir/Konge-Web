@@ -91,18 +91,16 @@ const Block3 = () => {
                 </ul>
               </div>
             </div>
-            <a
+            <button
               className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer flex justify-center"
-              href={TWITTER}
-              target="_blank"
-              rel="noreferrer"
+              onClick={() => window.open(TWITTER, "_blank")}
             >
               <Img
                 src={BUTTON3}
                 alt="button"
                 className="max-h-[30vh] h-auto w-2/3 aspect-auto"
               />
-            </a>
+            </button>
           </div>
         </div>
       </div>
