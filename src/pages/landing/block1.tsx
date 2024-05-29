@@ -61,12 +61,6 @@ const Block1 = () => {
               <Links customClass="" />
             </div>
             <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
-              <a href="/airdrop" className={aClass}>
-                Airdrop
-              </a>
-              <a href="/presale" className={aClass}>
-                Presale
-              </a>
               <a href="/whitepaper" className={aClass}>
                 Whitepaper
               </a>
