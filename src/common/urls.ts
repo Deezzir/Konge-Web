@@ -12,4 +12,4 @@ export const RAYDIUM = "";
 export const JUPITER = "";
 
 export const RPC_ENDPOINT = import.meta.env.VITE_RPC_ENDPOINT as string;
-// export const RPC_CONNECTION = new Connection(RPC_ENDPOINT, "confirmed");
+export const RPC_CONNECTION = new Connection(RPC_ENDPOINT, "confirmed");
