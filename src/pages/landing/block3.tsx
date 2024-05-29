@@ -10,6 +10,7 @@ import CLOUD2 from "../../assets/block3/cloud2.webp";
 import CLOUD3 from "../../assets/block3/cloud3.webp";
 import CLOUD4 from "../../assets/block3/cloud4.webp";
 import { MovingImg } from "../../common/moving-img";
+import { TWITTER } from "../../common/urls";
 
 const Block3 = () => {
   const getBlock = useCallback(() => {
@@ -92,7 +93,7 @@ const Block3 = () => {
             </div>
             <a
               className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer flex justify-center"
-              href={"https://pump.fun"}
+              href={TWITTER}
               target="_blank"
               rel="noreferrer"
             >

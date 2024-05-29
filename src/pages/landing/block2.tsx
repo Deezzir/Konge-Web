@@ -4,8 +4,13 @@ import TITLE2 from "../../assets/block2/title.webp";
 import { Img } from "react-image";
 import { BlockWrapper } from "../../common/block-wrapper";
 import { useCallback } from "react";
+import { TELEGRAM } from "../../common/urls";
 
 const Block2 = () => {
+  const onButtonClick = () => {
+    window.open(TELEGRAM, "_blank");
+  };
+
   const getBlock = useCallback(() => {
     return (
       <div className="flex max-w-screen-3xl flex-col lg:flex-row gap-4 lg:gap-12 p-4 md:p-16 justify-center items-center">
@@ -24,6 +29,7 @@ const Block2 = () => {
           </h2>
           <a className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer flex justify-center">
             <Img
+              onClick={onButtonClick}
               src={BUTTON2}
               alt="button2"
               className="h-full aspect-auto w-full lg:w-[60%]"

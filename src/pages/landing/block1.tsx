@@ -7,7 +7,10 @@ import SWAY1 from "../../assets/block1/sway.webp";
 import { useCallback } from "react";
 import { Img } from "react-image";
 import { BlockWrapper } from "../../common/block-wrapper";
+import { CopyCa } from "../../common/copy-ca";
 
+const aClass =
+  "text-2xl cursor-pointer hover:scale-[1.03] transition-transform duration-500";
 const Block1 = () => {
   const getBlock = useCallback(() => {
     return (
@@ -41,6 +44,7 @@ const Block1 = () => {
               </span>{" "}
               is a chad gambler with bullying issues on the Solana network.
             </h2>
+            <CopyCa />
             <div className="flex flex-col 2xl:flex-row justify-between items-center gap-8 xl:gap-16">
               <a
                 className="hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
@@ -55,6 +59,17 @@ const Block1 = () => {
                 />
               </a>
               <Links customClass="" />
+            </div>
+            <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
+              <a href="/airdrop" className={aClass}>
+                Airdrop
+              </a>
+              <a href="/presale" className={aClass}>
+                Presale
+              </a>
+              <a href="/whitepaper" className={aClass}>
+                Whitepaper
+              </a>
             </div>
           </div>
         </div>
